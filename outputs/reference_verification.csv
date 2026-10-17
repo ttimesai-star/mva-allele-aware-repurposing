@@ -1,0 +1,48 @@
+key,pmid,doi,journal,year,first_author,pubmed_title,title_overlap,doi_match,status
+Hanks2004,15475955,10.1038/ng1449,Nat Genet,2004,Hanks S,Constitutional aneuploidy and cancer predisposition caused by biallelic mutations in BUB1B.,1.0,True,VERIFIED
+Suijkerbuijk2010,20516114,10.1158/0008-5472.CAN-09-4319,Cancer Res,2010,Suijkerbuijk SJ,Molecular causes for BUBR1 dysfunction in the human cancer predisposition syndrome mosaic variegated aneuploidy.,1.0,True,VERIFIED
+Sieben2020,31738183,10.1172/JCI126863,J Clin Invest,2020,Sieben CJ,BubR1 allelic effects drive phenotypic heterogeneity in mosaic-variegated aneuploidy progeria syndrome.,1.0,True,VERIFIED
+Baker2004,15208629,10.1038/ng1382,Nat Genet,2004,Baker DJ,BubR1 insufficiency causes early onset of aging-associated phenotypes and infertility in mice.,1.0,True,VERIFIED
+Baker2008,18516091,10.1038/ncb1744,Nat Cell Biol,2008,Baker DJ,Opposing roles for p16Ink4a and p19Arf in senescence and ageing caused by BubR1 insufficiency.,1.0,True,VERIFIED
+Baker2011,22048312,10.1038/nature10600,Nature,2011,Baker DJ,Clearance of p16Ink4a-positive senescent cells delays ageing-associated disorders.,1.0,True,VERIFIED
+Baker2013NCB,23242215,10.1038/ncb2643,Nat Cell Biol,2013,Baker DJ,Increased expression of BubR1 protects against aneuploidy and cancer and extends healthy lifespan.,1.0,True,VERIFIED
+Baker2013CellRep,23602569,10.1016/j.celrep.2013.03.028,Cell Rep,2013,Baker DJ,p21 both attenuates and drives senescence and aging in BubR1 progeroid mice.,1.0,True,VERIFIED
+North2014,24825348,10.15252/embj.201386907,EMBO J,2014,North BJ,SIRT2 induces the checkpoint kinase BubR1 to increase lifespan.,1.0,True,VERIFIED
+Wu2023,38009412,10.1111/acel.14027,Aging Cell,2023,Wu LE,SIRT2 transgenic over-expression does not impact lifespan in mice.,1.0,True,VERIFIED
+Suematsu2014,25285631,10.1016/j.bbrc.2014.09.128,Biochem Biophys Res Commun,2014,Suematsu T,Deacetylation of the mitotic checkpoint protein BubR1 at lysine 250 by SIRT2 and subsequent effects on BubR1 degradation during the prometaphase/anaphase transition.,1.0,True,VERIFIED
+Choi2009,19407811,10.1038/emboj.2009.123,EMBO J,2009,Choi E,BubR1 acetylation at prometaphase is required for modulating APC/C activity and timing of mitosis.,1.0,True,VERIFIED
+Avalos2005,15780941,10.1016/j.molcel.2005.02.022,Mol Cell,2005,Avalos JL,Mechanism of sirtuin inhibition by nicotinamide: altering the NAD(+) cosubstrate specificity of a Sir2 enzyme.,1.0,True,VERIFIED
+Pirinen2020,32386566,10.1016/j.cmet.2020.04.008,Cell Metab,2020,Pirinen E,Niacin Cures Systemic NAD(+) Deficiency and Improves Muscle Performance in Adult-Onset Mitochondrial Myopathy.,1.0,True,VERIFIED
+Aaltio2024,39173541,10.1016/j.nmd.2024.07.005,Neuromuscul Disord,2024,Aaltio J,Niacin supplementation in a child with novel MTTN variant m.5670A>G causing early onset mitochondrial myopathy and NAD(+) deficiency.,1.0,True,VERIFIED
+Colletti1993,8516088,,Pediatrics,1993,Colletti RB,Niacin treatment of hypercholesterolemia in children.,1.0,True,VERIFIED
+Laberge2015,26147250,10.1038/ncb3195,Nat Cell Biol,2015,Laberge RM,MTOR regulates the pro-tumorigenic senescence-associated secretory phenotype by promoting IL1A translation.,1.0,True,VERIFIED
+Mannick2014,25540326,10.1126/scitranslmed.3009892,Sci Transl Med,2014,Mannick JB,mTOR inhibition improves immune function in the elderly.,1.0,True,VERIFIED
+Mannick2018,29997249,10.1126/scitranslmed.aaq1564,Sci Transl Med,2018,Mannick JB,TORC1 inhibition enhances immune function and reduces infections in the elderly.,1.0,True,VERIFIED
+Mascarenhas2019,31513481,10.1200/JCO.19.00576,J Clin Oncol,2019,Mascarenhas L,Randomized Phase II Trial of Bevacizumab or Temsirolimus in Combination With Chemotherapy for First Relapse Rhabdomyosarcoma: A Report From the Children's Oncology Group.,1.0,True,VERIFIED
+Gupta2024,38936378,10.1016/S1470-2045(24)00255-9,Lancet Oncol,2024,Gupta AA,"Addition of temsirolimus to chemotherapy in children, adolescents, and young adults with intermediate-risk rhabdomyosarcoma (ARST1431): a randomised, open-label, phase 3 trial from the Children's Oncology Group.",1.0,True,VERIFIED
+Xu2015,26578790,10.1073/pnas.1515386112,Proc Natl Acad Sci U S A,2015,Xu M,JAK inhibition alleviates the cellular senescence-associated secretory phenotype and frailty in old age.,1.0,True,VERIFIED
+Zhu2015,25754370,10.1111/acel.12344,Aging Cell,2015,Zhu Y,The Achilles' heel of senescent cells: from transcriptome to senolytic drugs.,1.0,True,VERIFIED
+Hickson2019,31542391,10.1016/j.ebiom.2019.08.069,EBioMedicine,2019,Hickson LJ,Senolytics decrease senescent cells in humans: Preliminary report from a clinical trial of Dasatinib plus Quercetin in individuals with diabetic kidney disease.,1.0,True,VERIFIED
+Yousefzadeh2018,30279143,10.1016/j.ebiom.2018.09.015,EBioMedicine,2018,Yousefzadeh MJ,Fisetin is a senotherapeutic that extends health and lifespan.,1.0,True,VERIFIED
+Gore2018,29498925,10.1200/JCO.2017.75.9597,J Clin Oncol,2018,Gore L,Dasatinib in Pediatric Patients With Chronic Myeloid Leukemia in Chronic Phase: Results From a Phase II Trial.,1.0,True,VERIFIED
+Tang2011,21315436,10.1016/j.cell.2011.01.017,Cell,2011,Tang YC,Identification of aneuploidy-selective antiproliferation compounds.,1.0,True,VERIFIED
+Santaguida2017,28633018,10.1016/j.devcel.2017.05.022,Dev Cell,2017,Santaguida S,Chromosome Mis-segregation Generates Cell-Cycle-Arrested Cells with Complex Karyotypes that Are Eliminated by the Immune System.,1.0,True,VERIFIED
+Wang2021,34105235,10.15252/embr.202052032,EMBO Rep,2021,Wang RW,Aneuploid senescent cells activate NF-κB to promote their immune clearance by NK cells.,0.91,True,VERIFIED
+Dai2004,14744753,10.1158/0008-5472.can-03-3119,Cancer Res,2004,Dai W,Slippage of mitotic arrest and enhanced tumor development in mice with BubR1 haploinsufficiency.,1.0,True,VERIFIED
+Nakano2024,39264246,10.1158/1078-0432.CCR-24-1098,Clin Cancer Res,2024,Nakano Y,Update on Recommendations for Cancer Screening and Surveillance in Children with Genomic Instability Disorders.,1.0,True,VERIFIED
+Ochiai2019,31081598,10.1002/pbc.27804,Pediatr Blood Cancer,2019,Ochiai K,Long-term remission of bilateral Wilms tumors that developed from premature separation of chromatids/mosaic variegated aneuploidy syndrome due to bilateral nephrectomy and peritoneal dialysis.,1.0,True,VERIFIED
+NishitaniIsa2019,31184400,10.1111/ped.13849,Pediatr Int,2019,Nishitani-Isa M,Rhabdomyosarcoma with premature chromatid separation-mosaic variegated aneuploidy syndrome: Reduced-intensity chemotherapy.,1.0,True,VERIFIED
+Ochiai2014,24344301,10.1073/pnas.1317008111,Proc Natl Acad Sci U S A,2014,Ochiai H,TALEN-mediated single-base-pair editing identification of an intergenic mutation upstream of BUB1B as causative of PCS (MVA) syndrome.,1.0,True,VERIFIED
+Matsuura2006,16411201,10.1002/ajmg.a.31069,Am J Med Genet A,2006,Matsuura S,Monoallelic BUB1B mutations and defective mitotic-spindle checkpoint in seven families with premature chromatid separation (PCS) syndrome.,1.0,True,VERIFIED
+GarciaCastillo2008,18548531,10.1002/ajmg.a.32315,Am J Med Genet A,2008,García-Castillo H,Clinical and genetic heterogeneity in patients with mosaic variegated aneuploidy: delineation of clinical subtypes.,1.0,True,VERIFIED
+Malumbres2024,39169218,10.1038/s41576-024-00762-6,Nat Rev Genet,2024,Malumbres M,"Mosaic variegated aneuploidy in development, ageing and cancer.",1.0,True,VERIFIED
+Yost2017,28553959,10.1038/ng.3883,Nat Genet,2017,Yost S,Biallelic TRIP13 mutations predispose to Wilms tumor and chromosome missegregation.,1.0,True,VERIFIED
+Aziz2018,30035751,10.1172/JCI120316,J Clin Invest,2018,Aziz K,Mosaic-variegated aneuploidy syndrome mutation or haploinsufficiency in Cep57 impairs tumor suppression.,1.0,True,VERIFIED
+Carvalhal2022,35044816,10.1126/sciadv.abk0114,Sci Adv,2022,Carvalhal S,"Biallelic BUB1 mutations cause microcephaly, developmental delay, and variable effects on cohesion and chromosome segregation.",1.0,True,VERIFIED
+VillarroyaBeltri2022,36322655,10.1126/sciadv.abq5914,Sci Adv,2022,Villarroya-Beltri C,Biallelic germline mutations in MAD1L1 induce a syndrome of aneuploidy with high tumor susceptibility.,1.0,True,VERIFIED
+Limwongse1999,9916837,10.1002/(sici)1096-8628(19990101)82:1<20::aid-ajmg4>3.0.co;2-5,Am J Med Genet,1999,Limwongse C,Child with mosaic variegated aneuploidy and embryonal rhabdomyosarcoma.,1.0,True,VERIFIED
+Mengel2021,34418116,10.1002/jimd.12428,J Inherit Metab Dis,2021,Mengel E,"Efficacy and safety of arimoclomol in Niemann-Pick disease type C: Results from a double-blind, randomised, placebo-controlled, multinational phase 2/3 trial of a novel treatment.",1.0,True,VERIFIED
+Gray2022,36455410,10.1016/j.ebiom.2022.104374,EBioMedicine,2022,Gray J,Heat shock protein amplification improves cerebellar myelination in the Npc1(nih) mouse model.,1.0,True,VERIFIED
+Tveten2007,17408384,10.1111/j.1742-4658.2007.05735.x,FEBS J,2007,Tveten K,4-Phenylbutyrate restores the functionality of a misfolded mutant low-density lipoprotein receptor.,1.0,True,VERIFIED
+Mosallaei2022,35234826,10.1001/jamadermatol.2021.5992,JAMA Dermatol,2022,Mosallaei D,Molecular and Clinical Outcomes After Intravenous Gentamicin Treatment for Patients With Junctional Epidermolysis Bullosa Caused by Nonsense Variants.,1.0,True,VERIFIED
+Hoy2022,35986838,10.1007/s40265-022-01764-6,Drugs,2022,Hoy SM,Pimitespib: First Approval.,1.0,True,VERIFIED

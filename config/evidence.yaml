@@ -1,0 +1,272 @@
+# Curated, citation-backed knowledge used by the pipeline.
+# Every number below is an expert judgement on a 0-3 scale and every judgement carries refs.
+# Change a score, rerun `make all`, and the ranking + sensitivity analysis update.
+
+disease:
+  name: "Mosaic variegated aneuploidy type 1 (MVA1), biallelic BUB1B"
+  mondo: "MONDO_0009759"
+  gene: BUB1B
+  protein: "BUBR1 (UniProt O60566)"
+  refs: [Hanks2004, Suijkerbuijk2010, Malumbres2024]
+
+# ---------------------------------------------------------------------------
+# Allele classes. In biallelic MVA1 a missense allele usually pairs with a truncating
+# allele, and the mutations fall into two functional classes (Suijkerbuijk 2010):
+# (1) lower BUBR1 abundance - truncating alleles give no transcript, missense alleles in or
+#     near the kinase domain give unstable protein with high turnover;
+# (2) specific defects in checkpoint activity or microtubule attachment.
+# ---------------------------------------------------------------------------
+allele_classes:
+  TRUNC:
+    label: "Truncating / null (nonsense, frameshift, canonical splice)"
+    protein_effect: "no stable product (transcript absent)"
+    refs: [Suijkerbuijk2010, Hanks2004]
+  TRUNC_NONSENSE:
+    label: "Truncating by a premature stop codon (nonsense) - a subset of TRUNC"
+    protein_effect: "as TRUNC, but a read-through drug could restore some full-length protein"
+    refs: [Suijkerbuijk2010, Mosallaei2022]
+  MS_UNSTABLE:
+    label: "Missense in or near the kinase domain (aa 766-1050 +/- 30)"
+    protein_effect: "protein made but turned over fast -> low abundance; residual function"
+    refs: [Suijkerbuijk2010]
+  MS_FUNCTIONAL:
+    label: "Missense outside the kinase-domain window"
+    protein_effect: "normal abundance, specific checkpoint/attachment defect"
+    refs: [Suijkerbuijk2010]
+  REG:
+    label: "Regulatory / expression-lowering (e.g. upstream intergenic variant)"
+    protein_effect: "wild-type protein at reduced level"
+    refs: [Ochiai2014, Matsuura2006]
+
+kinase_window: {start: 720, end: 1050}   # UniProt O60566 'Protein kinase' 766-1050, extended N-terminally so R727C (unstable in patient LCLs, Suijkerbuijk 2010) counts as 'near'
+
+# ---------------------------------------------------------------------------
+# Mechanism chain (edges are drawn in figures/mechanism_map.png).
+# level: 3 = shown in vivo in BubR1-insufficient mice or MVA patient cells; 2 = shown in cells /
+# other models; 1 = inference.
+# ---------------------------------------------------------------------------
+mechanism_edges:
+  - {from: "BUB1B biallelic variants", to: "Low BUBR1 abundance", level: 3, refs: [Suijkerbuijk2010]}
+  - {from: "Low BUBR1 abundance", to: "Weak spindle checkpoint + attachment errors", level: 3, refs: [Suijkerbuijk2010, Baker2013NCB]}
+  - {from: "Weak spindle checkpoint + attachment errors", to: "Chromosome missegregation / mosaic aneuploidy", level: 3, refs: [Hanks2004, Baker2004]}
+  - {from: "Chromosome missegregation / mosaic aneuploidy", to: "p53-p21 / p16 senescence + SASP", level: 3, refs: [Baker2008, Baker2013CellRep, Santaguida2017]}
+  - {from: "p53-p21 / p16 senescence + SASP", to: "Progeroid tissue decline (lens, fat, muscle)", level: 3, refs: [Baker2011, Baker2008]}
+  - {from: "Truncating allele", to: "mTORC1 hyperactivity in skeletal muscle", level: 2, refs: [Sieben2020]}
+  - {from: "mTORC1 hyperactivity in skeletal muscle", to: "Progeroid tissue decline (lens, fat, muscle)", level: 1, refs: [Sieben2020]}
+  - {from: "Chromosome missegregation / mosaic aneuploidy", to: "Embryonal cancers (RMS, Wilms, leukaemia)", level: 3, refs: [Hanks2004, Nakano2024]}
+  - {from: "Weak spindle checkpoint + attachment errors", to: "Mitotic slippage under antimitotics", level: 2, refs: [Dai2004]}
+  - {from: "p53-p21 / p16 senescence + SASP", to: "NF-kB-driven NK-cell clearance of aneuploid cells", level: 2, refs: [Wang2021, Santaguida2017]}
+  - {from: "NAD+ / SIRT2 deacetylation of BUBR1", to: "Low BUBR1 abundance", effect: "counteracts", level: 3, refs: [North2014, Suematsu2014]}
+
+# ---------------------------------------------------------------------------
+# Intervention strategies.
+# allele_fit: how well the strategy matches each allele class (0-1).
+# The genotype fit for a biallelic genotype is max(fit(allele1), fit(allele2)) because one
+# responsive allele is enough for a dosage effect, except where noted.
+# ---------------------------------------------------------------------------
+strategies:
+  S1_DOSAGE:
+    name: "Raise residual BUBR1 dosage (NAD+ -> SIRT2 -> BUBR1 stabilisation)"
+    intent: "disease-modifying: fewer missegregations at the source"
+    logic: >
+      More BUBR1 protects against aneuploidy and cancer (Baker 2013). Missense MVA alleles near the
+      kinase domain make protein that is degraded fast (Suijkerbuijk 2010). SIRT2 keeps BUBR1
+      deacetylated and stable; NAD+ decline lowers BUBR1, and the NAD+ precursor NMN raised BUBR1
+      in vivo; SIRT2 overexpression extended median lifespan of BubR1 hypomorphic mice (North 2014).
+      So an NAD+ booster should raise steady-state BUBR1 only where protein is being made.
+    allele_fit: {TRUNC: 0.0, MS_UNSTABLE: 1.0, MS_FUNCTIONAL: 0.4, REG: 0.8, TRUNC_NONSENSE: 0.0}
+    refs: [Baker2013NCB, Suijkerbuijk2010, North2014, Suematsu2014]
+    counter_refs: [Wu2023]
+  S1b_PROTEOSTASIS:
+    name: "Help unstable missense BUBR1 fold (heat-shock response / chemical chaperone)"
+    intent: "disease-modifying for the missense allele only"
+    logic: >
+      In MVA patient cells the substitution mutants I909T and R727C turn over ~2-fold faster than
+      wild type, and in U2OS cells the I909T and L1012P mutants need HSP90 to avoid proteasomal
+      clearance, i.e. they are folding-defective (Suijkerbuijk 2010). A licensed heat-shock-response
+      amplifier (arimoclomol) or a chemical chaperone (phenylbutyrate) could raise the steady-state
+      level of such a mutant. The same logic flags HSP90 inhibitors as harmful (do-no-harm layer).
+    allele_fit: {TRUNC: 0.0, TRUNC_NONSENSE: 0.0, MS_UNSTABLE: 1.0, MS_FUNCTIONAL: 0.1, REG: 0.0}
+    refs: [Suijkerbuijk2010, Mengel2021, Gray2022, Tveten2007]
+    counter_refs: []
+  S1c_READTHROUGH:
+    name: "Read through a nonsense allele to make some full-length BUBR1"
+    intent: "exploratory, nonsense alleles only"
+    logic: >
+      Systemic gentamicin produced read-through protein in children with nonsense variants in another
+      disease (Mosallaei 2022). For BUB1B nonsense alleles any full-length protein adds to a very low
+      total dose; renal and ear toxicity make this a cell-assay probe, not a long-term therapy.
+    allele_fit: {TRUNC: 0.0, TRUNC_NONSENSE: 1.0, MS_UNSTABLE: 0.0, MS_FUNCTIONAL: 0.0, REG: 0.0}
+    refs: [Mosallaei2022]
+    counter_refs: []
+  S2_MTOR:
+    name: "Dampen mTORC1 / SASP (senomorphic, low-dose intermittent)"
+    intent: "slow progeroid decline (muscle, fat) without killing cells"
+    logic: >
+      Mice carrying a truncating BubR1 allele show mTORC1 hyperactivity in skeletal muscle that tracks
+      with sarcopenia (Sieben 2020); mTOR drives the SASP via IL1A translation (Laberge 2015).
+      Low-dose everolimus improved, not suppressed, vaccine responses in older adults (Mannick 2014, 2018).
+    allele_fit: {TRUNC: 1.0, MS_UNSTABLE: 0.6, MS_FUNCTIONAL: 0.6, REG: 0.6, TRUNC_NONSENSE: 1.0}
+    refs: [Sieben2020, Laberge2015, Mannick2014, Mannick2018]
+    counter_refs: [Wang2021, Gupta2024]
+  S3_SENOLYTIC:
+    name: "Clear senescent (often aneuploid) cells, hit-and-run"
+    intent: "delay lens, fat and muscle pathology; remove arrested aneuploid cells"
+    logic: >
+      In BubR1 progeroid mice, genetic removal of p16Ink4a-positive cells delayed cataract,
+      lipodystrophy and sarcopenia, and late clearance slowed established disease (Baker 2011).
+      Dasatinib + quercetin is the pharmacological route that reduces senescent-cell burden in people (Hickson 2019).
+    allele_fit: {TRUNC: 1.0, MS_UNSTABLE: 1.0, MS_FUNCTIONAL: 1.0, REG: 1.0, TRUNC_NONSENSE: 1.0}
+    refs: [Baker2011, Zhu2015, Hickson2019, Baker2008, Baker2013CellRep]
+    counter_refs: []
+  S4_ANEU_SELECTIVE:
+    name: "Exploit aneuploid-cell stress (autophagy / energy stress)"
+    intent: "exploratory: preferentially burden aneuploid clones"
+    logic: >
+      Chloroquine (autophagy inhibitor) and AICAR (energy stress) were selectively anti-proliferative
+      in aneuploid cells (Tang 2011). Evidence is from trisomic MEFs and cancer lines, not MVA.
+    allele_fit: {TRUNC: 1.0, MS_UNSTABLE: 1.0, MS_FUNCTIONAL: 1.0, REG: 1.0, TRUNC_NONSENSE: 1.0}
+    refs: [Tang2011]
+    counter_refs: []
+
+# ---------------------------------------------------------------------------
+# Candidate approved medicines. chembl ids are checked live (max_phase, first approval);
+# openFDA labels are pulled for pediatric-use text. Scores 0-3.
+#  mech      - causal proximity to the BUBR1 defect
+#  model     - evidence in BubR1/MVA models for the strategy (genetic or drug)
+#  human     - human target-engagement / efficacy evidence for the mechanism
+#  ped       - pediatric safety & experience (3 = long, benign; 1 = serious toxicity)
+#  test      - how fast/cheap the hypothesis can be tested in MVA patient-derived cells or BubR1 mice
+#  risk      - specific risk for an MVA child (0 none ... 3 high), subtracted
+# ---------------------------------------------------------------------------
+candidates:
+  - drug: niacin
+    chembl: CHEMBL573
+    strategy: S1_DOSAGE
+    scores: {mech: 3, model: 2, human: 2, ped: 1.5, test: 3, risk: 0.5}
+    why: >
+      Licensed NAD+ precursor; raised blood NAD+ up to 8-fold and muscle NAD+ to control level in
+      patients (Pirinen 2020); used in a child with NAD+ deficiency (Aaltio 2024); pediatric experience
+      in hypercholesterolaemia (Colletti 1993), but the US label states pediatric safety is not established
+      (off-label in children). Preferred over nicotinamide, which is itself a direct
+      sirtuin inhibitor (Avalos 2005).
+    risk_note: "flushing, hepatotoxicity at high dose; theoretical support of tumour metabolism - monitor"
+    validation: "BUBR1 western + nocodazole checkpoint assay + mitotic-error rate in MVA fibroblasts/LCLs +/- NAD+ precursor"
+    refs: [North2014, Pirinen2020, Aaltio2024, Colletti1993, Avalos2005]
+    counter_refs: [Wu2023]
+  - drug: everolimus
+    chembl: CHEMBL1908360
+    strategy: S2_MTOR
+    scores: {mech: 2, model: 1, human: 3, ped: 2, test: 2, risk: 1.5}
+    why: >
+      Pediatric label from age 1 (TSC); low-dose regimens enhanced immune function in older adults
+      (Mannick 2014, 2018). Muscle mTORC1 hyperactivity is documented in truncating-allele BubR1 mice (Sieben 2020).
+      mTOR inhibition (temsirolimus) had activity in relapsed RMS (Mascarenhas 2019) but added nothing
+      to frontline intermediate-risk RMS (Gupta 2024): we propose it for tissue ageing, not as an anticancer drug.
+    risk_note: "immunosuppression could blunt NK clearance of aneuploid cells - low-dose intermittent only"
+    validation: "p-S6K/p-4EBP1 + SASP panel in MVA fibroblasts; muscle function in BubR1 +/X753 mice, which show muscle mTORC1 hyperactivity (Sieben 2020; BubR1 H/X753 mice die prematurely and are unsuitable)"
+    refs: [Sieben2020, Mannick2014, Mannick2018, Laberge2015, Mascarenhas2019]
+    counter_refs: [Gupta2024, Wang2021]
+  - drug: sirolimus
+    chembl: CHEMBL413
+    strategy: S2_MTOR
+    scores: {mech: 2, model: 1, human: 2, ped: 2, test: 2, risk: 1.5}
+    why: "Same mechanism as everolimus; broad pediatric experience; kept as alternative."
+    risk_note: "as everolimus"
+    validation: "as everolimus"
+    refs: [Sieben2020, Laberge2015]
+    counter_refs: [Wang2021]
+  - drug: dasatinib
+    chembl: CHEMBL1421
+    strategy: S3_SENOLYTIC
+    scores: {mech: 2, model: 2, human: 2, ped: 1, test: 2, risk: 1}
+    why: >
+      The strategy (removing p16-positive cells) is genetically validated in BubR1 progeroid mice
+      (Baker 2011). Dasatinib (+ quercetin, a supplement) is the senolytic pair that lowers senescent-cell
+      burden in people (Zhu 2015; Hickson 2019) and dasatinib has pediatric approval (Gore 2018).
+    risk_note: "myelosuppression, effusions - only short intermittent courses; quercetin is not a licensed medicine"
+    validation: "SA-beta-gal / p16 counts in MVA fibroblast cultures; BubR1 H/H cataract & fat endpoints"
+    refs: [Baker2011, Zhu2015, Hickson2019, Gore2018]
+    counter_refs: []
+  - drug: ruxolitinib
+    chembl: CHEMBL1789941
+    strategy: S2_MTOR
+    scores: {mech: 1, model: 1, human: 2, ped: 1.5, test: 2, risk: 2}
+    why: "JAK inhibition reduced the SASP and frailty in old mice (Xu 2015); a second senomorphic route."
+    risk_note: "immunosuppression and infections; weaker link to BUBR1"
+    validation: "SASP cytokines in MVA fibroblast conditioned medium"
+    refs: [Xu2015]
+    counter_refs: [Wang2021]
+  - drug: hydroxychloroquine
+    chembl: CHEMBL1535
+    strategy: S4_ANEU_SELECTIVE
+    scores: {mech: 1, model: 1, human: 2, ped: 2, test: 3, risk: 1}
+    why: "Autophagy inhibition was aneuploidy-selective in vitro (chloroquine; Tang 2011). Exploratory."
+    risk_note: "retinal toxicity with long use; no MVA data"
+    validation: "proliferation of high- vs low-aneuploidy MVA cell clones +/- HCQ"
+    refs: [Tang2011]
+    counter_refs: []
+  - drug: metformin
+    chembl: CHEMBL1431
+    strategy: S4_ANEU_SELECTIVE
+    scores: {mech: 1, model: 0.5, human: 1.5, ped: 3, test: 3, risk: 0.5}
+    why: "AMPK activator like AICAR (aneuploidy-selective in Tang 2011) and an indirect mTORC1 brake. Inference only."
+    risk_note: "low; but no direct aneuploidy evidence for metformin itself"
+    validation: "as hydroxychloroquine"
+    refs: [Tang2011]
+    counter_refs: []
+
+  - drug: arimoclomol
+    chembl: CHEMBL2107726
+    strategy: S1b_PROTEOSTASIS
+    scores: {mech: 2, model: 1, human: 2, ped: 2, test: 3, risk: 1}
+    why: >
+      Amplifies the heat-shock response to counter protein misfolding; slowed NPC progression in a
+      randomised trial in patients aged 2-18 (Mengel 2021); FDA label from age 2. MVA missense BUBR1
+      is chaperone-dependent (Suijkerbuijk 2010), so this is the most direct licensed proteostasis lever.
+    risk_note: "heat-shock proteins also support tumour cells - theoretical; urticaria/angioedema reported"
+    validation: "cycloheximide-chase of BUBR1 in MVA LCLs carrying a kinase-domain missense allele +/- arimoclomol"
+    refs: [Suijkerbuijk2010, Mengel2021, Gray2022]
+    counter_refs: []
+  - drug: sodium phenylbutyrate
+    chembl: CHEMBL1746
+    strategy: S1b_PROTEOSTASIS
+    scores: {mech: 1.5, model: 1, human: 2, ped: 2, test: 3, risk: 1}
+    why: >
+      Licensed for urea-cycle disorders in children; acts as a chemical chaperone for misfolded mutants
+      (LDLR G544V; Tveten 2007). Evidence is for secretory proteins, BUBR1 is cytosolic - weaker fit.
+    risk_note: "also an HDAC inhibitor - effect on BUBR1 acetylation and mitosis unknown; pill burden"
+    validation: "as arimoclomol"
+    refs: [Tveten2007, Suijkerbuijk2010]
+    counter_refs: [Choi2009]
+  - drug: gentamicin
+    chembl: CHEMBL6067485
+    strategy: S1c_READTHROUGH
+    scores: {mech: 2, model: 0.5, human: 2, ped: 1, test: 3, risk: 1.5}
+    why: "Read-through of nonsense variants shown in children (Mosallaei 2022); probe for BUB1B nonsense alleles."
+    risk_note: "nephro- and ototoxicity; not for chronic use"
+    validation: "full-length BUBR1 in nonsense-allele patient cells +/- gentamicin"
+    refs: [Mosallaei2022]
+    counter_refs: []
+
+# Not ranked (not licensed medicines) but named in the report next to the licensed alternative:
+non_licensed_mentions:
+  - {agent: "nicotinamide riboside / NMN", note: "NAD+ precursors sold as supplements; NMN raised BUBR1 in mice", refs: [North2014]}
+  - {agent: "quercetin", note: "partner of dasatinib in the D+Q senolytic regimen", refs: [Zhu2015, Hickson2019]}
+  - {agent: "fisetin", note: "senolytic flavonoid, extended health and lifespan in mice", refs: [Yousefzadeh2018]}
+
+# ---------------------------------------------------------------------------
+# Do-no-harm layer: mechanisms that lean on an intact spindle checkpoint or add
+# chromosome errors. The pipeline pulls every approved drug with these mechanisms
+# from ChEMBL. These are flags for monitoring and research, not prescribing advice.
+# ---------------------------------------------------------------------------
+liability_mechanisms:
+  - {pattern: "tubulin", why: "antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004)", refs: [Dai2004]}
+  - {pattern: "aurora kinase", why: "further weakens the checkpoint", refs: [Dai2004]}
+  - {pattern: "polo-like kinase", why: "mitotic kinase inhibition adds segregation errors", refs: [Dai2004]}
+  - {pattern: "kinesin-like protein KIF11", why: "spindle motor (Eg5) inhibition; plain 'kinesin' matched KIF5B-RET fusion inhibitors (false positives), so the pattern is specific", refs: [Dai2004]}
+  - {pattern: "HSP90 inhibitor", why: "missense BUBR1 needs HSP90 to escape degradation (Suijkerbuijk 2010); pimitespib is licensed in Japan (Hoy 2022) though ChEMBL still lists it below phase 4", refs: [Suijkerbuijk2010, Hoy2022]}
+clinical_flags:
+  - {flag: "Avoid radiation exposure where possible in surveillance imaging", refs: [Nakano2024]}
+  - {flag: "Reports of severe chemotherapy toxicity / reduced-intensity regimens in MVA1 children", refs: [Ochiai2019, NishitaniIsa2019]}
+  - {flag: "Renal ultrasound every 3 months to age 7 for all MVA (SIOP-E / AACR)", refs: [Nakano2024]}

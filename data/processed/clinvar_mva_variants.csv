@@ -1,0 +1,122 @@
+gene,clinvar_uid,title,classification,review,traits,consequences,allele_class,protein_pos
+BUB1B,4999248,NM_001211.6(BUB1B):c.1058+2T>G,Likely pathogenic,"criteria provided, single submitter",BUB1B-related disorder,splice donor variant,TRUNC,
+BUB1B,4924213,NM_001211.6(BUB1B):c.100C>T (p.Gln34Ter),Likely pathogenic,"criteria provided, single submitter",BUB1B-related disorder,nonsense,TRUNC_NONSENSE,34
+BUB1B,4856965,NM_001211.6(BUB1B):c.2009+1G>A,Likely pathogenic,"criteria provided, single submitter",not provided,splice donor variant,TRUNC,
+BUB1B,4713327,NM_001211.6(BUB1B):c.1147C>T (p.Gln383Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,383
+BUB1B,4712931,NM_001211.6(BUB1B):c.2436_2439dup (p.Arg814fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,814
+BUB1B,4712329,NM_001211.6(BUB1B):c.282_283del (p.Glu95_Ser96insTer),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC_NONSENSE,95
+BUB1B,4541918,NM_001211.6(BUB1B):c.670C>T (p.Arg224Ter),Likely pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1; not provided,nonsense,TRUNC_NONSENSE,224
+BUB1B,4277610,NM_001211.6(BUB1B):c.913G>T (p.Glu305Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,305
+BUB1B,3729705,NM_001211.6(BUB1B):c.2364dup (p.Ala789fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,789
+BUB1B,3723848,NM_001211.6(BUB1B):c.464del (p.Tyr155fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,155
+BUB1B,3667271,NM_001211.6(BUB1B):c.751+1G>T,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,splice donor variant,TRUNC,
+BUB1B,3660229,NM_001211.6(BUB1B):c.1512T>A (p.Cys504Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,504
+BUB1B,3608325,NM_001211.6(BUB1B):c.564_571dup (p.Ser191fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,191
+BUB1B,3602713,NM_001211.6(BUB1B):c.192del (p.Glu63_Tyr64insTer),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant|nonsense,TRUNC_NONSENSE,63
+BUB1B,3577084,NM_001211.6(BUB1B):c.995del (p.Ala332fs),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1; Colorectal cancer; Premature chromatid separation trait,frameshift variant,TRUNC,332
+BUB1B,3577081,NM_001211.6(BUB1B):c.243del (p.Arg80_Tyr81insTer),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1; Premature chromatid separation trait; Colorectal cancer; Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,80
+BUB1B,3577080,NM_001211.6(BUB1B):c.239+2T>C,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1; Colorectal cancer; Premature chromatid separation trait,splice donor variant,TRUNC,
+BUB1B,3385277,NM_001211.6(BUB1B):c.2478T>A (p.Tyr826Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,826
+BUB1B,3336280,NM_001211.6(BUB1B):c.803dup (p.Asn268fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,268
+BUB1B,3018326,NM_001211.6(BUB1B):c.1302del (p.Ser435fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,435
+BUB1B,2916224,NM_001211.6(BUB1B):c.1198A>T (p.Lys400Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,400
+BUB1B,2913819,NM_001211.6(BUB1B):c.897del (p.Met300fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,300
+BUB1B,2756659,NM_001211.6(BUB1B):c.897dup (p.Met300fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,300
+BUB1B,2750610,NM_001211.6(BUB1B):c.2298C>G (p.Tyr766Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,766
+BUB1B,2729407,NM_001211.6(BUB1B):c.1313_1317del (p.Lys438fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,438
+BUB1B,2697026,NM_001211.6(BUB1B):c.94_95insGCTCTCCCTCTCCCTCTCCCGCTCCCGGGGGGGGGGGGGGGCGGGGGGGGGGGGGGGGGGGGGGGGGGGGGCGGGGGGGGGGGCGNNNNNNNNNNAAAAAAAAAAAAAAAAAAAAAAAGAAAATGTACAACCTT (p.Leu32fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,32
+BUB1B,2690554,NM_001211.6(BUB1B):c.948_966del19 (p.Arg317fs),Likely pathogenic,"criteria provided, single submitter",not provided,frameshift variant,TRUNC,317
+BUB1B,2503511,NM_001211.6(BUB1B):c.1401G>T (p.Gln467His),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,missense variant,MS_FUNCTIONAL,467
+BUB1B,2431740,NM_001211.6(BUB1B):c.1372del (p.Thr458fs),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,458
+BUB1B,2202424,NM_001211.6(BUB1B):c.2153del (p.Thr718fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,718
+BUB1B,2196645,NM_001211.6(BUB1B):c.1743del (p.Phe581fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,581
+BUB1B,2187691,NM_001211.6(BUB1B):c.1378C>T (p.Gln460Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,460
+BUB1B,2170845,NM_001211.6(BUB1B):c.2285-2A>G,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,splice acceptor variant,TRUNC,
+BUB1B,2152812,NM_001211.6(BUB1B):c.871del (p.Thr291fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,291
+BUB1B,2141736,NM_001211.6(BUB1B):c.1663C>T (p.Arg555Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,555
+BUB1B,2083538,NM_001211.6(BUB1B):c.36-1G>A,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,splice acceptor variant,TRUNC,
+BUB1B,2034835,NM_001211.6(BUB1B):c.1141del (p.Arg381fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,381
+BUB1B,1946449,NM_001211.6(BUB1B):c.310del (p.Arg104fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,104
+BUB1B,1510796,NM_001211.6(BUB1B):c.581+1G>T,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,splice donor variant,TRUNC,
+BUB1B,1453887,NM_001211.6(BUB1B):c.2210del (p.Glu736_Leu737insTer),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,736
+BUB1B,1452898,NM_001211.6(BUB1B):c.877C>T (p.Gln293Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,293
+BUB1B,1450254,NM_001211.6(BUB1B):c.199C>T (p.Arg67Ter),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",BUB1B-related disorder; Inborn genetic diseases; Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,67
+BUB1B,1443723,NM_001211.6(BUB1B):c.1906del (p.Glu636fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,636
+BUB1B,1408436,NM_001211.6(BUB1B):c.1441C>T (p.Gln481Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,481
+BUB1B,1405980,NM_001211.6(BUB1B):c.1466_1470dup (p.Gly491fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,491
+BUB1B,1398305,NM_001211.6(BUB1B):c.1298T>A (p.Leu433Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,433
+BUB1B,1392551,NM_001211.6(BUB1B):c.2334C>G (p.Tyr778Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,778
+BUB1B,1386253,NM_001211.6(BUB1B):c.169C>T (p.Gln57Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,57
+BUB1B,1325385,NM_001211.6(BUB1B):c.1672del (p.Ala559fs),Pathogenic,"criteria provided, single submitter",not provided,frameshift variant,TRUNC,559
+BUB1B,1325384,NM_001211.6(BUB1B):c.2328dup (p.Asp777fs),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",not provided; Mosaic variegated aneuploidy syndrome 1; Inborn genetic diseases,frameshift variant,TRUNC,777
+BUB1B,1320272,NM_001211.6(BUB1B):c.1045del (p.Arg349fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,349
+BUB1B,1299567,NM_001211.6(BUB1B):c.2636dup (p.His880fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1; Premature chromatid separation trait,frameshift variant,TRUNC,880
+BUB1B,1172740,NM_001211.6(BUB1B):c.667C>T (p.Gln223Ter),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome,nonsense,TRUNC_NONSENSE,223
+BUB1B,1074988,NM_001211.6(BUB1B):c.693_694insTT (p.Ser232fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,232
+BUB1B,1073991,NM_001211.6(BUB1B):c.422dup (p.Tyr141Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,141
+BUB1B,1070955,NM_001211.6(BUB1B):c.799C>T (p.Gln267Ter),Pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,267
+BUB1B,1066212,NM_001211.6(BUB1B):c.2386-2A>G,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,splice acceptor variant,TRUNC,
+BUB1B,998296,NM_001211.6(BUB1B):c.473G>A (p.Trp158Ter),Likely pathogenic,"criteria provided, single submitter",Premature chromatid separation trait,nonsense,TRUNC_NONSENSE,158
+BUB1B,986977,NM_001211.6(BUB1B):c.2363_2364del (p.Ser788fs),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",not provided; Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,788
+BUB1B,959090,NM_001211.6(BUB1B):c.2478T>G (p.Tyr826Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,826
+BUB1B,947291,NM_001211.6(BUB1B):c.578del (p.His193fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,193
+BUB1B,939671,NM_001211.6(BUB1B):c.595C>T (p.Arg199Ter),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,199
+BUB1B,863360,NM_001211.6(BUB1B):c.967-2A>T,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,splice acceptor variant,TRUNC,
+BUB1B,854842,NM_001211.6(BUB1B):c.925C>T (p.Gln309Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,309
+BUB1B,851299,NM_001211.6(BUB1B):c.358C>T (p.Arg120Ter),Pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1; not provided,nonsense,TRUNC_NONSENSE,120
+BUB1B,849777,NM_001211.6(BUB1B):c.709_712del (p.Thr237fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,237
+BUB1B,639058,NM_001211.6(BUB1B):c.2316C>G (p.Tyr772Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,772
+BUB1B,581252,NM_001211.6(BUB1B):c.1954C>T (p.Gln652Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,652
+BUB1B,572796,NM_001211.6(BUB1B):c.1387A>T (p.Arg463Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,463
+BUB1B,533901,NM_001211.6(BUB1B):c.2210T>G (p.Leu737Ter),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",not provided; Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,737
+BUB1B,438799,NM_001211.6(BUB1B):c.1648C>T (p.Arg550Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,550
+BUB1B,434546,NM_001211.6(BUB1B):c.340C>T (p.Arg114Ter),Pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,114
+BUB1B,403749,NM_001211.6(BUB1B):c.2308C>T (p.Arg770Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,770
+BUB1B,6769,NM_001211.6(BUB1B):c.1402-5A>G,Pathogenic; Affects,no assertion criteria provided,Premature chromatid separation trait; Mosaic variegated aneuploidy syndrome 1,intron variant,OTHER,
+BUB1B,6768,NM_001211.6(BUB1B):c.1833del (p.Phe611fs),Pathogenic; Affects,no assertion criteria provided,Premature chromatid separation trait; Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,611
+BUB1B,6767,NM_001211.6(BUB1B):c.1402-1G>T,Pathogenic; Affects,no assertion criteria provided,Premature chromatid separation trait; Mosaic variegated aneuploidy syndrome 1,splice acceptor variant,TRUNC,
+BUB1B,6763,NM_001211.6(BUB1B):c.2208_2211dup (p.Ser738fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,738
+BUB1B,6760,NM_001211.6(BUB1B):c.580C>T (p.Arg194Ter),Pathogenic/Likely pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,194
+TRIP13,4070948,NM_004237.4(TRIP13):c.1021-1G>C,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 3,splice acceptor variant,TRUNC,
+TRIP13,3910602,NM_004237.4(TRIP13):c.420dup (p.Tyr141fs),Likely pathogenic,"criteria provided, single submitter",not provided,frameshift variant,TRUNC,141
+TRIP13,3723852,NM_004237.4(TRIP13):c.720_723del (p.Ile240fs),Pathogenic,"criteria provided, single submitter",not provided,frameshift variant,TRUNC,240
+TRIP13,3645934,NM_004237.4(TRIP13):c.672+1G>A,Likely pathogenic,"criteria provided, single submitter",not provided,splice donor variant,TRUNC,
+TRIP13,977645,NM_004237.4(TRIP13):c.739G>A (p.Val247Met),Pathogenic,no assertion criteria provided,Oocyte maturation defect 9,missense variant,MISSENSE,247
+TRIP13,977644,NM_004237.4(TRIP13):c.592A>G (p.Ile198Val),Pathogenic,no assertion criteria provided,Oocyte maturation defect 9,missense variant,MISSENSE,198
+TRIP13,977642,NM_004237.4(TRIP13):c.518G>A (p.Arg173Gln),Pathogenic,"criteria provided, single submitter",Oocyte maturation defect 9,missense variant,MISSENSE,173
+TRIP13,431046,NM_004237.4(TRIP13):c.673-1G>C,Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 3,splice acceptor variant,TRUNC,
+TRIP13,431045,NM_004237.4(TRIP13):c.1060C>T (p.Arg354Ter),Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 3,nonsense,TRUNC_NONSENSE,354
+CEP57,4751150,NM_014679.5(CEP57):c.600del (p.Thr201fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,frameshift variant|intron variant,TRUNC,201
+CEP57,3574131,NM_014679.5(CEP57):c.973C>T (p.Arg325Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,325
+CEP57,3336980,NM_014679.5(CEP57):c.1388_1391del (p.Lys463fs),Likely pathogenic,"criteria provided, single submitter",not provided,frameshift variant,TRUNC,463
+CEP57,2884194,NM_014679.5(CEP57):c.699+1G>T,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,splice donor variant,TRUNC,
+CEP57,2873280,NM_014679.5(CEP57):c.312_313del (p.Tyr104_Lys105delinsTer),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,104
+CEP57,2828215,NM_014679.5(CEP57):c.622-2A>G,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,splice acceptor variant,TRUNC,
+CEP57,2161490,NM_014679.5(CEP57):c.46-2A>T,Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,splice acceptor variant,TRUNC,
+CEP57,1421218,NM_014679.5(CEP57):c.523C>T (p.Arg175Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,175
+CEP57,1030345,NM_014679.5(CEP57):c.1015C>T (p.Arg339Ter),Pathogenic,"criteria provided, multiple submitters, no conflicts",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,339
+CEP57,977798,NM_014679.5(CEP57):c.382+2T>C,Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,splice donor variant,TRUNC,
+CEP57,936628,NM_014679.5(CEP57):c.778A>T (p.Lys260Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,260
+CEP57,643769,NM_014679.5(CEP57):c.451C>T (p.Arg151Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,151
+CEP57,638495,NM_014679.5(CEP57):c.1402del (p.Lys467_Leu468insTer),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,467
+CEP57,574305,NM_014679.5(CEP57):c.1117C>T (p.Gln373Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,373
+CEP57,431798,NM_014679.5(CEP57):c.724del (p.Arg242fs),Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome,frameshift variant,TRUNC,242
+CEP57,30692,NM_014679.5(CEP57):c.241C>T (p.Arg81Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 2,nonsense,TRUNC_NONSENSE,81
+CEP57,30691,NM_014679.5(CEP57):c.915_925dup (p.Leu309fs),Pathogenic,"criteria provided, multiple submitters, no conflicts",not provided; Mosaic variegated aneuploidy syndrome 2; Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,309
+CEP57,30690,NM_014679.5(CEP57):c.520_521del (p.Glu174fs),Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 2,frameshift variant,TRUNC,174
+BUB1,3377649,NM_004336.5(BUB1):c.1430dup (p.Pro478fs),Likely pathogenic,"criteria provided, single submitter","Microcephaly 30, primary, autosomal recessive",frameshift variant,TRUNC,478
+BUB1,1806483,NM_004336.5(BUB1):c.2197dup (p.Ala733fs),Pathogenic,no assertion criteria provided,"Microcephaly 30, primary, autosomal recessive",frameshift variant,TRUNC,733
+BUB1,1806482,NM_004336.5(BUB1):c.2625+1G>A,Pathogenic,no assertion criteria provided,"Microcephaly 30, primary, autosomal recessive",splice donor variant,TRUNC,
+BUB1,7083,NM_004336.5(BUB1):c.1475C>A (p.Ser492Tyr),Pathogenic,no assertion criteria provided,"Colorectal cancer with chromosomal instability, somatic",missense variant,MISSENSE,492
+BUB1,7082,NM_004336.5(BUB1):c.422+1G>A,Pathogenic,no assertion criteria provided,"Colorectal cancer with chromosomal instability, somatic",splice donor variant,TRUNC,
+BUB1,6759,NM_004336.5(BUB1):c.3069del (p.His1024fs),Pathogenic,no assertion criteria provided,Carcinoma of colon,frameshift variant,TRUNC,1024
+MAD1L1,4850229,NM_001013836.2(MAD1L1):c.1585C>T (p.Arg529Ter),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 7 with inflammation and tumor predisposition,nonsense,TRUNC_NONSENSE,529
+MAD1L1,4690248,NM_001013836.2(MAD1L1):c.244C>T (p.Arg82Ter),Likely pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 7 with inflammation and tumor predisposition,nonsense|intron variant,TRUNC_NONSENSE,82
+MAD1L1,4335983,NM_001013836.2(MAD1L1):c.1708C>T (p.Arg570Ter),Likely pathogenic,"criteria provided, single submitter",not provided,nonsense,TRUNC_NONSENSE,570
+MAD1L1,2576571,NM_001013836.2(MAD1L1):c.1396C>T (p.Gln466Ter),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,nonsense,TRUNC_NONSENSE,466
+MAD1L1,2576570,NM_001013836.2(MAD1L1):c.820_823del (p.Glu274fs),Pathogenic,"criteria provided, single submitter",Mosaic variegated aneuploidy syndrome 1,frameshift variant,TRUNC,274
+MAD1L1,2443778,NM_001013836.2(MAD1L1):c.1882G>T (p.Glu628Ter),Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 7 with inflammation and tumor predisposition,nonsense,TRUNC_NONSENSE,628
+MAD1L1,2443777,NM_001013836.2(MAD1L1):c.196C>T (p.Gln66Ter),Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 7 with inflammation and tumor predisposition,nonsense|intron variant,TRUNC_NONSENSE,66
+MAD1L1,6919,NM_001013836.2(MAD1L1):c.1947C>G (p.Tyr649Ter),Pathogenic,no assertion criteria provided,"LYMPHOMA, DIFFUSE LARGE B-CELL, SOMATIC",nonsense,TRUNC_NONSENSE,649
+CENATAC,2627020,NM_198489.3(CENATAC):c.803A>T (p.Glu268Val),Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 4,missense variant|non-coding transcript variant,MISSENSE,268
+CENATAC,2627019,NM_198489.3(CENATAC):c.805+2_805+19del,Pathogenic,no assertion criteria provided,Mosaic variegated aneuploidy syndrome 4,splice donor variant,TRUNC,

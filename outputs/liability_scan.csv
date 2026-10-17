@@ -1,0 +1,24 @@
+pattern,drug,chembl_id,mechanism,first_approval,why_flagged,refs
+tubulin,ALBENDAZOLE,CHEMBL1483,Tubulin inhibitor,1996,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,BELANTAMAB MAFODOTIN,CHEMBL4298209,Tubulin inhibitor,2020,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,BRENTUXIMAB VEDOTIN,CHEMBL1742994,Tubulin inhibitor,2011,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,CABAZITAXEL,CHEMBL1201748,Tubulin inhibitor,2010,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,COLCHICINE,CHEMBL107,Tubulin inhibitor,1961,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,DOCETAXEL,CHEMBL3545252,Tubulin inhibitor,1995,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,DOCETAXEL ANHYDROUS,CHEMBL92,Tubulin stabiliser,1995,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,ENFORTUMAB VEDOTIN,CHEMBL3301589,Tubulin inhibitor,2019,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,ERIBULIN MESYLATE,CHEMBL1683544,Tubulin inhibitor,2010,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,GRISEOFULVIN,CHEMBL562,Tubulin inhibitor,1962,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,IXABEPILONE,CHEMBL1201752,Tubulin inhibitor,2007,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,MEBENDAZOLE,CHEMBL685,Tubulin inhibitor,1974,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,MIRVETUXIMAB SORAVTANSINE,CHEMBL3545132,Tubulin inhibitor,2022,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,PACLITAXEL,CHEMBL428647,Tubulin inhibitor,1992,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,POLATUZUMAB VEDOTIN,CHEMBL3301582,Tubulin inhibitor,2019,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,THIABENDAZOLE,CHEMBL625,Tubulin inhibitor,1967,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,TISOTUMAB VEDOTIN,CHEMBL4297841,Tubulin inhibitor,2021,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,TRASTUZUMAB EMTANSINE,CHEMBL1743082,Tubulin inhibitor,2013,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,VINBLASTINE SULFATE,CHEMBL378544,Tubulin inhibitor,1965,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,VINCRISTINE SULFATE,CHEMBL501867,Tubulin inhibitor,1963,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,VINFLUNINE,CHEMBL2110725,Tubulin inhibitor,2009,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,VINFLUNINE DITARTRATE,CHEMBL2105629,Tubulin inhibitor,2009,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004
+tubulin,VINORELBINE TARTRATE,CHEMBL538943,Tubulin inhibitor,1994,antimitotics rely on checkpoint arrest; BubR1-deficient cells slip out of arrest (Dai 2004),Dai2004

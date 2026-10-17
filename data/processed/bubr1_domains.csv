@@ -1,0 +1,8 @@
+type,start,end,description
+Domain,62,226,BUB1 N-terminal
+Domain,766,1050,Protein kinase
+Region,152,185,Necessary for interaction with KNL1
+Region,368,393,Disordered
+Region,456,480,Disordered
+Motif,111,118,Nuclear localization signal
+Motif,224,232,D-box

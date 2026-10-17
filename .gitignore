@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+report/*.html
+# controlled hackathon data must never be committed
+*.vcf
+*.vcf.gz
+*.bam
+*.cram
+*.fastq*
+.env

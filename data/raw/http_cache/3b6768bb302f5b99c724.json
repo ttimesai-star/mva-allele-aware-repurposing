@@ -1,0 +1,1 @@
+{"url": "https://www.ebi.ac.uk/chembl/api/data/mechanism.json?mechanism_of_action__icontains=heat%20shock%20protein%20hsp%2090&limit=1000", "body": null, "fetched": "2026-10-17", "payload": {"mechanisms": [], "page_meta": {"limit": 1000, "next": null, "offset": 0, "previous": null, "total_count": 0}}}

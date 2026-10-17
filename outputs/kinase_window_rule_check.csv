@@ -1,0 +1,9 @@
+variant,observed_abundance,observation,source,predicted_class,agrees
+Y155C,normal,no effect on protein level when expressed in U2OS (Fig 2D); patient line 731X/Y155C shows reduced total BUBR1 because the other allele is null,Suijkerbuijk2010,MS_FUNCTIONAL,True
+R550Q,normal,no effect on protein level when expressed in U2OS (Fig 2D),Suijkerbuijk2010,MS_FUNCTIONAL,True
+R727C,low,~2-fold faster turnover in patient LCL (cycloheximide chase),Suijkerbuijk2010,MS_UNSTABLE,True
+R814H,low,reduced full-length BUBR1 in patient line 753X/R814H,Suijkerbuijk2010,MS_UNSTABLE,True
+L844F,low,poorly expressed; cannot restore BUBR1-depleted cells,Suijkerbuijk2010,MS_UNSTABLE,True
+I909T,low,~2-fold faster turnover in patient LCL; HSP90-dependent in U2OS,Suijkerbuijk2010,MS_UNSTABLE,True
+Q921H,normal,indistinguishable from wild type (in cis with L844F),Suijkerbuijk2010,MS_UNSTABLE,False
+L1012P,low,"HSP90-dependent, degraded by proteasome in U2OS",Suijkerbuijk2010,MS_UNSTABLE,True

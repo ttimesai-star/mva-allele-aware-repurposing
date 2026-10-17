@@ -1,0 +1,20 @@
+# Weights of the evidence dimensions (sum of positive weights = 1). risk is a penalty.
+weights: {mech: 0.25, model: 0.20, human: 0.15, ped: 0.20, test: 0.10, risk: 0.10}
+# fit floor: a strategy that does not match the genotype keeps this share of its score
+fit_floor: 0.25
+# sensitivity analysis
+n_draws: 5000
+dirichlet_concentration: 20      # higher = weights stay closer to the defaults
+score_jitter: 0.5                # each expert score is perturbed by U(-0.5, +0.5), clipped to 0-3
+seed: 20261024
+
+# Biallelic genotype configurations evaluated. The primary scenario is the most common MVA1
+# configuration reported by Suijkerbuijk 2010: one truncating + one missense allele in/near the
+# kinase domain. The panel can instantiate the confirmed genotype with src/classify_variants.py.
+genotypes:
+  G1_TRUNC_x_MSUNSTABLE: [TRUNC, MS_UNSTABLE]
+  G2_NONSENSE_x_MSUNSTABLE: [TRUNC_NONSENSE, MS_UNSTABLE]
+  G3_TRUNC_x_MSFUNCTIONAL: [TRUNC, MS_FUNCTIONAL]
+  G4_TRUNC_x_REG: [TRUNC, REG]
+  G5_MSUNSTABLE_x_MSUNSTABLE: [MS_UNSTABLE, MS_UNSTABLE]
+primary_genotype: G1_TRUNC_x_MSUNSTABLE

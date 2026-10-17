@@ -1,0 +1,50 @@
+# Every claim in the report and in evidence.yaml points to one of these keys.
+# src/verify_refs.py checks each PMID against PubMed (title words + DOI) and writes
+# outputs/reference_verification.csv. A reference that fails verification blocks the build.
+Hanks2004:        {pmid: "15475955", doi: "10.1038/ng1449", title: "Constitutional aneuploidy and cancer predisposition caused by biallelic mutations in BUB1B"}
+Suijkerbuijk2010: {pmid: "20516114", doi: "10.1158/0008-5472.CAN-09-4319", title: "Molecular causes for BUBR1 dysfunction in the human cancer predisposition syndrome mosaic variegated aneuploidy"}
+Sieben2020:       {pmid: "31738183", doi: "10.1172/JCI126863", title: "BubR1 allelic effects drive phenotypic heterogeneity in mosaic-variegated aneuploidy progeria syndrome"}
+Baker2004:        {pmid: "15208629", doi: "10.1038/ng1382", title: "BubR1 insufficiency causes early onset of aging-associated phenotypes and infertility in mice"}
+Baker2008:        {pmid: "18516091", doi: "10.1038/ncb1744", title: "Opposing roles for p16Ink4a and p19Arf in senescence and ageing caused by BubR1 insufficiency"}
+Baker2011:        {pmid: "22048312", doi: "10.1038/nature10600", title: "Clearance of p16Ink4a-positive senescent cells delays ageing-associated disorders"}
+Baker2013NCB:     {pmid: "23242215", doi: "10.1038/ncb2643", title: "Increased expression of BubR1 protects against aneuploidy and cancer and extends healthy lifespan"}
+Baker2013CellRep: {pmid: "23602569", doi: "10.1016/j.celrep.2013.03.028", title: "p21 both attenuates and drives senescence and aging in BubR1 progeroid mice"}
+North2014:        {pmid: "24825348", doi: "10.15252/embj.201386907", title: "SIRT2 induces the checkpoint kinase BubR1 to increase lifespan"}
+Wu2023:           {pmid: "38009412", doi: "10.1111/acel.14027", title: "SIRT2 transgenic over-expression does not impact lifespan in mice"}
+Suematsu2014:     {pmid: "25285631", doi: "10.1016/j.bbrc.2014.09.128", title: "Deacetylation of the mitotic checkpoint protein BubR1 at lysine 250 by SIRT2"}
+Choi2009:         {pmid: "19407811", doi: "10.1038/emboj.2009.123", title: "BubR1 acetylation at prometaphase is required for modulating APC/C activity and timing of mitosis"}
+Avalos2005:       {pmid: "15780941", doi: "10.1016/j.molcel.2005.02.022", title: "Mechanism of sirtuin inhibition by nicotinamide"}
+Pirinen2020:      {pmid: "32386566", doi: "10.1016/j.cmet.2020.04.008", title: "Niacin Cures Systemic NAD(+) Deficiency and Improves Muscle Performance in Adult-Onset Mitochondrial Myopathy"}
+Aaltio2024:       {pmid: "39173541", doi: "10.1016/j.nmd.2024.07.005", title: "Niacin supplementation in a child with novel MTTN variant"}
+Colletti1993:     {pmid: "8516088", doi: "", title: "Niacin treatment of hypercholesterolemia in children"}
+Laberge2015:      {pmid: "26147250", doi: "10.1038/ncb3195", title: "MTOR regulates the pro-tumorigenic senescence-associated secretory phenotype by promoting IL1A translation"}
+Mannick2014:      {pmid: "25540326", doi: "10.1126/scitranslmed.3009892", title: "mTOR inhibition improves immune function in the elderly"}
+Mannick2018:      {pmid: "29997249", doi: "10.1126/scitranslmed.aaq1564", title: "TORC1 inhibition enhances immune function and reduces infections in the elderly"}
+Mascarenhas2019:  {pmid: "31513481", doi: "10.1200/JCO.19.00576", title: "Randomized Phase II Trial of Bevacizumab or Temsirolimus in Combination With Chemotherapy for First Relapse Rhabdomyosarcoma"}
+Gupta2024:        {pmid: "38936378", doi: "10.1016/S1470-2045(24)00255-9", title: "Addition of temsirolimus to chemotherapy in children, adolescents, and young adults with intermediate-risk rhabdomyosarcoma (ARST1431)"}
+Xu2015:           {pmid: "26578790", doi: "10.1073/pnas.1515386112", title: "JAK inhibition alleviates the cellular senescence-associated secretory phenotype and frailty in old age"}
+Zhu2015:          {pmid: "25754370", doi: "10.1111/acel.12344", title: "The Achilles' heel of senescent cells: from transcriptome to senolytic drugs"}
+Hickson2019:      {pmid: "31542391", doi: "10.1016/j.ebiom.2019.08.069", title: "Senolytics decrease senescent cells in humans: Preliminary report from a clinical trial of Dasatinib plus Quercetin"}
+Yousefzadeh2018:  {pmid: "30279143", doi: "10.1016/j.ebiom.2018.09.015", title: "Fisetin is a senotherapeutic that extends health and lifespan"}
+Gore2018:         {pmid: "29498925", doi: "10.1200/JCO.2017.75.9597", title: "Dasatinib in Pediatric Patients With Chronic Myeloid Leukemia in Chronic Phase: Results From a Phase II Trial"}
+Tang2011:         {pmid: "21315436", doi: "10.1016/j.cell.2011.01.017", title: "Identification of aneuploidy-selective antiproliferation compounds"}
+Santaguida2017:   {pmid: "28633018", doi: "10.1016/j.devcel.2017.05.022", title: "Chromosome Mis-segregation Generates Cell-Cycle-Arrested Cells with Complex Karyotypes that Are Eliminated by the Immune System"}
+Wang2021:         {pmid: "34105235", doi: "10.15252/embr.202052032", title: "Aneuploid senescent cells activate NF-kB to promote their immune clearance by NK cells"}
+Dai2004:          {pmid: "14744753", doi: "10.1158/0008-5472.can-03-3119", title: "Slippage of mitotic arrest and enhanced tumor development in mice with BubR1 haploinsufficiency"}
+Nakano2024:       {pmid: "39264246", doi: "10.1158/1078-0432.CCR-24-1098", title: "Update on Recommendations for Cancer Screening and Surveillance in Children with Genomic Instability Disorders"}
+Ochiai2019:       {pmid: "31081598", doi: "10.1002/pbc.27804", title: "Long-term remission of bilateral Wilms tumors that developed from premature separation of chromatids/mosaic variegated aneuploidy syndrome"}
+NishitaniIsa2019: {pmid: "31184400", doi: "10.1111/ped.13849", title: "Rhabdomyosarcoma with premature chromatid separation-mosaic variegated aneuploidy syndrome: Reduced-intensity chemotherapy"}
+Ochiai2014:       {pmid: "24344301", doi: "10.1073/pnas.1317008111", title: "TALEN-mediated single-base-pair editing identification of an intergenic mutation upstream of BUB1B as causative of PCS (MVA) syndrome"}
+Matsuura2006:     {pmid: "16411201", doi: "10.1002/ajmg.a.31069", title: "Monoallelic BUB1B mutations and defective mitotic-spindle checkpoint in seven families with premature chromatid separation (PCS) syndrome"}
+GarciaCastillo2008: {pmid: "18548531", doi: "10.1002/ajmg.a.32315", title: "Clinical and genetic heterogeneity in patients with mosaic variegated aneuploidy: delineation of clinical subtypes"}
+Malumbres2024:    {pmid: "39169218", doi: "10.1038/s41576-024-00762-6", title: "Mosaic variegated aneuploidy in development, ageing and cancer"}
+Yost2017:         {pmid: "28553959", doi: "10.1038/ng.3883", title: "Biallelic TRIP13 mutations predispose to Wilms tumor and chromosome missegregation"}
+Aziz2018:         {pmid: "30035751", doi: "10.1172/JCI120316", title: "Mosaic-variegated aneuploidy syndrome mutation or haploinsufficiency in Cep57 impairs tumor suppression"}
+Carvalhal2022:    {pmid: "35044816", doi: "10.1126/sciadv.abk0114", title: "Biallelic BUB1 mutations cause microcephaly, developmental delay, and variable effects on cohesion and chromosome segregation"}
+VillarroyaBeltri2022: {pmid: "36322655", doi: "10.1126/sciadv.abq5914", title: "Biallelic germline mutations in MAD1L1 induce a syndrome of aneuploidy with high tumor susceptibility"}
+Limwongse1999:    {pmid: "9916837", doi: "", title: "Child with mosaic variegated aneuploidy and embryonal rhabdomyosarcoma"}
+Mengel2021:       {pmid: "34418116", doi: "10.1002/jimd.12428", title: "Efficacy and safety of arimoclomol in Niemann-Pick disease type C: Results from a double-blind, randomised, placebo-controlled, multinational phase 2/3 trial"}
+Gray2022:         {pmid: "36455410", doi: "10.1016/j.ebiom.2022.104374", title: "Heat shock protein amplification improves cerebellar myelination in the Npc1(nih) mouse model"}
+Tveten2007:       {pmid: "17408384", doi: "10.1111/j.1742-4658.2007.05735.x", title: "4-Phenylbutyrate restores the functionality of a misfolded mutant low-density lipoprotein receptor"}
+Mosallaei2022:    {pmid: "35234826", doi: "10.1001/jamadermatol.2021.5992", title: "Molecular and Clinical Outcomes After Intravenous Gentamicin Treatment for Patients With Junctional Epidermolysis Bullosa Caused by Nonsense Variants"}
+Hoy2022:          {pmid: "35986838", doi: "10.1007/s40265-022-01764-6", title: "Pimitespib: First Approval"}
