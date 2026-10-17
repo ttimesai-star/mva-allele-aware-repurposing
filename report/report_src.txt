@@ -10,8 +10,7 @@ subtitle: "Rare Disease, Real Kid: MVA Hackathon 2026 - Track 2 (Drug Repurposin
 > The controlled hackathon dataset was **not** used: the framework is built from public data only and is
 > parametrised by genotype so that the panel or treating team can instantiate it locally with the confirmed variants.
 
-**AI disclosure (required).** Anthropic Claude Opus 5.5 via Claude Code; [AI DISCLOSURE: tier/opt-out - to confirm].
-No hackathon (controlled) data was ever provided to the AI system.
+**AI disclosure (required).** AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription. The account's 'Help improve our AI models' (training) setting was switched OFF on 17 October 2026, before submission; no hackathon-provided (gated) data was ever downloaded or shared with any model - the analysis used only public sources (PubMed, ClinVar, ChEMBL, openFDA, Open Targets). Models were used for literature triage, code and drafting; every reference was verified programmatically against PubMed (47/47).
 
 ## Summary
 
@@ -315,10 +314,7 @@ and paediatric label text (openFDA); (4) score each candidate on six referenced 
 allele fit for five genotype configurations; (6) test rank stability by Monte Carlo perturbation; (7) scan all
 approved drugs for checkpoint-dependent mechanisms to build the do-no-harm layer.
 
-**Generative AI (required).** Anthropic Claude Opus 5.5 via Claude Code; [AI DISCLOSURE: tier/opt-out - to confirm].
-The AI assisted with literature-search queries, code and drafting; all references were verified programmatically
-against PubMed and key claims were checked against abstracts or full texts. No controlled hackathon data was given to
-the AI.
+**Generative AI (required).** AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription. The account's 'Help improve our AI models' (training) setting was switched OFF on 17 October 2026, before submission; no hackathon-provided (gated) data was ever downloaded or shared with any model - the analysis used only public sources (PubMed, ClinVar, ChEMBL, openFDA, Open Targets). Models were used for literature triage, code and drafting; every reference was verified programmatically against PubMed (47/47).
 
 **Automated or manual identification.** Hybrid. Candidate selection and expert scores come from manual, AI-assisted
 literature review and curation; database annotation, reference verification, the ClinVar landscape, the liability

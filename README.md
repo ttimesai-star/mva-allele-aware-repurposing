@@ -56,8 +56,7 @@ cd src && python classify_variants.py "p.Gln383Ter" "p.Ile909Thr"
 
 ## AI disclosure
 
-Anthropic Claude Opus 5.5 via Claude Code; [AI DISCLOSURE: tier/opt-out - to confirm]. No controlled hackathon data was
-provided to the AI system.
+AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription. The account's 'Help improve our AI models' (training) setting was switched OFF on 17 October 2026, before submission; no hackathon-provided (gated) data was ever downloaded or shared with any model - the analysis used only public sources (PubMed, ClinVar, ChEMBL, openFDA, Open Targets). Models were used for literature triage, code and drafting; every reference was verified programmatically against PubMed (47/47).
 
 ## License
 
