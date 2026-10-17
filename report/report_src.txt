@@ -1,39 +1,57 @@
 ---
 title: "Allele-aware drug repurposing for BUB1B mosaic variegated aneuploidy (MVA1)"
-subtitle: "Rare Disease, Real Kid: MVA Hackathon 2026 - Track 2 (Drug Repurposing) - submission by zbignevich1"
+subtitle: "Rare Disease, Real Kid: MVA Hackathon 2026 - Track 2 (Drug Repurposing) - submission 2 by zbignevich1, instantiated for the proband's BUB1B genotype"
 ---
 
 > **Nature of this document.** This report proposes *research hypotheses requiring clinical evaluation*. It is not
 > medical advice and not a treatment recommendation for any individual. It contains no doses, schedules or
 > instructions for use in children. Every candidate below is an approved medicine proposed for laboratory and
 > clinical evaluation by qualified investigators and the treating team; several carry serious toxicities.
-> The controlled hackathon dataset was **not** used: the framework is built from public data only and is
-> parametrised by genotype so that the panel or treating team can instantiate it locally with the confirmed variants.
+> **What changed in this submission (2 of 3):** the controlled hackathon VCF and HPO profile were analysed locally,
+> the framework was instantiated for the proband's confirmed-candidate genotype (Section 2), and the missense allele
+> was assessed with sequence and structure models. Only the two named variants, their public annotations and the HPO
+> terms relevant to drug safety are reported, as the organisers' data-use guidance allows; no genotype-scale data
+> leave the analysis machine, and all copies were deleted after the analysis (Section 2.1).
 
-**AI disclosure (required).** AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription. The account's 'Help improve our AI models' (training) setting was switched OFF on 17 October 2026, before submission; no hackathon-provided (gated) data was ever downloaded or shared with any model - the analysis used only public sources (PubMed, ClinVar, ChEMBL, openFDA, Open Targets). Models were used for literature triage, code and drafting; every reference was verified programmatically against PubMed (47/47).
+**AI disclosure (required).** AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription, with the 'Help improve our AI models' (training) setting switched OFF on 17 October 2026, before any hackathon data were opened, and no feedback or ratings given on any output - the configuration the organisers' 28 September 2026 guidance accepts for consumer tiers. Raw controlled files (VCF, phenotype document) were processed only by local scripts on a separate workstation; Claude received only derived summaries (the four rare protein-altering calls in a 16-gene panel with zygosity and public annotations, per-gene counts, and the HPO table). Panel exon records (102) were annotated with Ensembl VEP REST, a processing tool. A critique round used free tiers of Google Gemini 3.7 Flash and NVIDIA Nemotron 3 Ultra via OpenRouter (plus four calls that failed: Kimi K2.6, GLM 5.3, DeepSeek V4.1 Flash, Mistral Magistral) with a prompt containing no patient data. Models were used for analysis code, literature triage, critique and drafting; every reference was verified programmatically against PubMed (68/68). All controlled data were deleted from the workstation on 17 October 2026 (see Section 2.1).
 
 ## Summary
 
 Mosaic variegated aneuploidy type 1 (MVA1) is caused by biallelic variants in *BUB1B*, which encodes the spindle
-assembly checkpoint kinase BUBR1 [@Hanks2004]. We argue that the right unit for drug repurposing in MVA1 is not the
-gene but the **allele class**. In patient cells, MVA1 mutations fall into two functional classes: those that lower
-BUBR1 abundance (truncating alleles give no transcript; missense alleles in or near the kinase domain make protein
-that is turned over fast) and those with specific checkpoint or attachment defects [@Suijkerbuijk2010]. A
-dosage-raising drug can only help if at least one allele still makes protein. We therefore built a transparent,
-citation-locked scoring framework that (i) classifies each allele, (ii) maps four mechanism-anchored intervention
-strategies onto the disease chain, (iii) scores ten approved medicines on six evidence dimensions, (iv) ranks them
-separately for five biallelic genotype configurations and (v) tests rank robustness over 5,000 perturbed weightings.
+assembly checkpoint pseudokinase BUBR1 [@Hanks2004; @Suijkerbuijk2012]. We argue that the right unit for drug
+repurposing in MVA1 is not the gene but the **allele class**: truncating alleles make no protein, missense alleles in or
+near the kinase domain make protein that is turned over fast, and other missense alleles keep normal abundance but
+impair checkpoint function [@Suijkerbuijk2010]. A dosage-raising drug can only help if one allele still makes protein.
+We built a citation-locked framework that classifies alleles, scores eleven approved medicines on six referenced
+evidence dimensions, ranks them per genotype and tests robustness over 5,000 perturbed weightings - and in this
+submission we **instantiated it for the hackathon proband**.
 
-For the most common MVA1 configuration (one truncating plus one kinase-domain missense allele), the leading
-hypotheses are: **H1** NAD+ repletion with niacin to support SIRT2-dependent BUBR1 stability (rank 1 in 88% and top
-three in 98% of perturbed rankings); **H2** heat-shock-response amplification with arimoclomol to stabilise a
-folding-defective missense BUBR1; **H3** low-dose intermittent mTORC1 dampening (everolimus) against progeroid muscle
-decline; and **H4** intermittent senolytic clearance (dasatinib, with quercetin as a non-licensed partner) of
-senescent, often aneuploid, cells. The ranking changes with genotype: if both alleles are null or the missense allele
-is stable, H1 and H2 drop and H3/H4 lead. A machine-generated **do-no-harm layer** lists approved medicines whose
-mechanism depends on an intact spindle checkpoint (23 approved tubulin-targeting agents in ChEMBL) and other
-clinical cautions for the treating team. All 47 references were verified against PubMed (title and DOI) by the
-pipeline itself; the build fails if any citation is missing or unverifiable.
+**The proband's genotype.** Local analysis of the provided VCF found exactly two rare protein-altering *BUB1B*
+variants, both heterozygous: **c.2210T>G p.(Leu737Ter)**, a ClinVar pathogenic nonsense allele predicted to trigger
+nonsense-mediated decay, and **c.3006T>G p.(Asn1002Lys)**, a novel missense change (absent from gnomAD) inside the
+pseudokinase domain, ten residues from the HSP90-dependent MVA1 allele L1012P. Phase cannot be resolved from the data
+(10.9 kb apart); trans configuration is assumed. No other rare damaging variant was found in 15 further checkpoint/MVA
+genes. In the AlphaFold model, Asn1002 is a well-packed (pLDDT 91, 16% exposed) residue whose side chain makes three
+hydrogen bonds to backbone atoms of Trp978 and Val998; ESM-2 and ThermoMPNN place N1002K among the published unstable
+MVA1 alleles (ESM-2 log-likelihood ratio -5.8, below every ClinVar-benign BUB1B missense; ThermoMPNN +1.5 kcal/mol, as
+destabilising as L844F), AlphaMissense calls it likely pathogenic (0.92), while ESM-1v calls it tolerated - an honest
+disagreement we report rather than hide. The proband therefore carries the configuration the framework was built for:
+**one null allele plus one probably unstable, protein-making kinase-domain allele**.
+
+**Patient-specific ranking.** Treating P(missense allele is unstable) = 0.8 (rule of succession on the 7/8 concordance
+of the kinase-window rule) and adding phenotype-driven risk modifiers (rhabdomyosarcoma therapy, nephrocalcinosis), the
+leading hypotheses for this child are: **H1** NAD+ repletion with niacin to support SIRT2-dependent stabilisation of the
+N1002K protein (rank 1 in 72% and top three in 79% of 5,000 perturbed rankings that also resample the missense class);
+**H2** heat-shock-response amplification with arimoclomol to help the N1002K protein fold (rank 2 if instability is
+confirmed); **H3** low-dose mTORC1 dampening (everolimus) or IL-1 blockade (anakinra) against progeroid, SASP-driven
+decline; **H4** intermittent senolytic clearance (dasatinib). The whole ranking hinges on one measurable quantity - the
+half-life of BUBR1-N1002K: niacin leads whenever P(unstable) > 0.5, and if the protein proves stable, allele-independent
+strategies take over. We give a decisive, cheap experiment that settles this, a combination rationale (niacin plus
+arimoclomol act on two different degradation routes of the same allele), a patient-specific **do-no-harm layer**
+(spindle poisons in standard rhabdomyosarcoma regimens, HSP90 inhibitors that would strip the N1002K protein of its
+chaperone, nephrotoxic and CYP3A-interacting agents) and an ideation-and-critique round with four other AI models
+whose adopted suggestions were all re-verified against PubMed. All references are verified programmatically at build
+time; the build fails on any unverifiable citation.
 
 ## 1. Variant mechanism: what goes wrong, and where a medicine could act
 
@@ -76,13 +94,189 @@ allele-independent one.
 
 ![Figure 1. Mechanism map: the MVA1 disease chain and the intervention points of strategies S1-S3 (S4 acts on aneuploid clones). Solid arrows: level-3 evidence; dashed: one mouse genotype. The do-no-harm layer is shown at the bottom.](FIG/mechanism_map.png)
 
-## 2. Approach
+## 2. Patient-specific analysis
+
+### 2.1 Data handling
+
+The controlled files used were the single-sample VCF (GRCh38, Sentieon/GATK) with its index, the clinical phenotype
+reference document (HPO table) and the dataset README; the FASTQ files were not downloaded. All files were held on one
+separate workstation, never on the authoring laptop, in a git repository or in any chat, and were processed by local
+scripts (`src/vcf_panel_extract.py`) that stream the VCF once and keep only records in exons (+/-20 bp) and 2 kb
+promoters of 16 spindle-checkpoint/MVA genes. Those 102 panel records - not the genome - were annotated with the
+Ensembl Variant Effect Predictor REST service [@McLaren2016], which the organisers' guidance classes as a processing
+tool. What left the workstation was a derived summary: four rare protein-altering panel calls (the two *BUB1B* variants
+below and two benign-predicted missense variants in other genes, not named here) with zygosity and public annotations,
+per-gene variant counts, and the HPO terms. Phase was never resolvable and no secondary-findings search was run. The
+VCF, index, phenotype document, intermediate tables and caches were deleted after the analysis (17 October 2026, 21:03 UTC+3; a disk-wide search afterwards found no remaining copy); the
+deletion will be confirmed to Sage Bionetworks by e-mail as the rules require. Sequence and structure modelling
+(Section 2.3) used only public inputs (UniProt sequence, AlphaFold model) plus the protein change N1002K.
+
+### 2.2 Genotype
+
+| | Allele 1 | Allele 2 |
+|---|---|---|
+| Change (NM_001211.6) | c.2210T>G p.(Leu737Ter) | c.3006T>G p.(Asn1002Lys) |
+| Zygosity, quality | heterozygous, PASS, GQ 99 | heterozygous, PASS, GQ 99 |
+| Location | exon 17 of 23, before the pseudokinase domain | exon 23 (last), pseudokinase domain C-lobe |
+| Population frequency | gnomAD max AF 7.9e-5 | absent from gnomAD |
+| ClinVar | Pathogenic/Likely pathogenic, multiple submitters, MVA1 | not listed; same protein change via c.3006T>A is a VUS |
+| Predicted consequence | UGA stop followed by A; nonsense-mediated decay expected | AlphaMissense 0.92 (likely pathogenic); REVEL 0.47; CADD 24.5 |
+| Framework class | TRUNC_NONSENSE (no protein) | MS_UNSTABLE (probable fast turnover) |
+
+Table 2. The proband's *BUB1B* alleles (`config/patient_genotype.yaml`; annotations from VEP with AlphaMissense,
+REVEL, CADD and SpliceAI [@Cheng2023; @Ioannidis2016; @Rentzsch2019; @Jaganathan2019]).
+
+The nonsense allele sits far upstream of the last exon junction, so its transcript should be degraded by
+nonsense-mediated decay [@Lindeboom2016]; even an escaping product would lack the entire pseudokinase domain. The two
+variants are 10.9 kb apart, beyond short-read phasing, there are no parental data, and the organisers declined to
+disclose phase during the challenge; compound heterozygosity is assumed from the recessive MVA1 phenotype. Under ACMG
+criteria [@Richards2015] the missense allele has PM2 (absent from population data), PP3 (computational evidence; see
+below) and, conditional on trans phase, PM3; it remains formally a variant of uncertain significance - exactly the
+"invisible" allele class described in Section 4.1. The panel screen found no other rare damaging variant in 15 further
+spindle-checkpoint/MVA genes (*CEP57*, *TRIP13*, *CENATAC*, *BUB1*, *BUB3*, *MAD1L1*, *MAD2L1*, *TTK*, *CDC20*, *KNL1*,
+*ZWINT*, *CENPE*, *SGO1*, *KIF2C*, *ANAPC1*).
+
+![Figure 2. The proband's alleles (above the bar) against published MVA1 missense alleles (below; dark = low protein abundance in patient or transfected cells). N1002K lies ten residues from L1012P, which is HSP90-dependent and degraded by the proteasome.](FIG/patient_alleles.png)
+
+### 2.3 Is the N1002K protein unstable? Structure and sequence evidence
+
+This is the question the ranking depends on, because a dosage- or folding-directed drug needs a protein-making allele
+whose product is degraded too fast.
+
+* **Position.** The pseudokinase domain of human BUBR1 is needed for conformational stability rather than catalysis
+  [@Suijkerbuijk2012]. Four of the five published low-abundance MVA1 alleles lie in it, including L1012P ten residues
+  away [@Suijkerbuijk2010]; mice carrying the mouse equivalent of L1012P (BubR1 L1002P in mouse numbering) together
+  with a truncating allele - the proband's configuration - died prematurely [@Sieben2020].
+* **Structure.** In the AlphaFold model of BUBR1 [@Jumper2021; @Varadi2024] Asn1002 has high confidence (pLDDT 91),
+  is largely buried (relative solvent accessibility 0.16, 18 C-alpha neighbours within 8 A) and its side-chain amide
+  makes three hydrogen bonds with backbone atoms of Trp978 and Val998. Lysine cannot reproduce the acceptor bond from
+  OD1 to the Trp978 amide and brings a long charged side chain into a packed site - a structural rationale for
+  destabilisation, not proof of it.
+* **Stability prediction.** ThermoMPNN [@Dieckhaus2024] on the kinase-domain crop (residues 720-1050) predicts
+  +1.5 kcal/mol for N1002K (positive = destabilising in this output), more than for 73% of all possible substitutions in
+  the domain, equal to L844F (+1.5), below I909T (+1.9) and L1012P (+3.1), and far above the four ClinVar-benign
+  kinase-domain variants (+0.08 to +0.22).
+* **Protein language models.** ESM-2 [@Lin2023] gives N1002K a masked-marginal log-likelihood ratio of -5.8, lower than
+  every one of 28 ClinVar benign/likely benign *BUB1B* missense variants (lowest -3.4) and within the range of the
+  published unstable alleles (-2.8 to -6.9). ESM-1v (one ensemble member; model family of [@Rives2021]) disagrees:
+  +0.59, inside the benign range, although it does score I909T (-5.4) as damaging. AlphaMissense calls N1002K likely
+  pathogenic (0.92).
+
+Three of four predictors and the structural context support instability; one predictor does not. None of these tools
+was calibrated on BUBR1 turnover, so we do **not** let them move the prior: P(unstable) stays at 0.8 from the
+kinase-window rule (7 of 8 published alleles concordant; (7+1)/(8+2) by Laplace's rule of succession), and the class
+question is carried through the ranking as uncertainty (Section 2.4) and handed to an experiment (Section 2.5).
+
+![Figure 3. Sequence and structure models place N1002K (red line) with the published low-abundance MVA1 alleles in ESM-2 and ThermoMPNN, but with benign variants in ESM-1v (outputs/variant_effect_scores.csv).](FIG/variant_effect.png)
+
+### 2.4 Ranking for this child
+
+The patient-specific score mixes the two possible classes of the missense allele
+(score = 0.8 x score(nonsense + unstable missense) + 0.2 x score(nonsense + stable missense)) and adds phenotype-driven
+risk modifiers from the HPO profile: +1.0 risk for gentamicin because of nephrocalcinosis (HP:0000121; aminoglycoside
+nephrotoxicity affects 20-33% of exposed children [@McWilliam2017]); +0.5 for dasatinib (myelosuppression on top of
+rhabdomyosarcoma chemotherapy, HP:0002859, which already required dose reduction in an MVA1 child
+[@NishitaniIsa2019]); +0.5 for everolimus, sirolimus, ruxolitinib and anakinra (immunosuppression after cancer therapy
+and possible loss of immune clearance of aneuploid cells [@Wang2021]).
+
+| Rank | Candidate (strategy) | If N1002K unstable | If N1002K stable | Expected (P = 0.8) | P(rank 1) | P(top 3) |
+|---|---|---|---|---|---|---|
+| 1 | niacin (S1, BUBR1 dosage) | 0.67 | 0.37 | **0.61** | **72%** | **79%** |
+| 2 | everolimus (S2, mTORC1/SASP) | 0.52 | 0.52 | 0.52 | 10% | 51% |
+| 3 | dasatinib (S3, senolytic) | 0.48 | 0.48 | 0.48 | 5% | 36% |
+| 4 | metformin (S4, aneuploid stress) | 0.47 | 0.47 | 0.47 | 6% | 24% |
+| 5 | sirolimus (S2, mTORC1/SASP) | 0.47 | 0.47 | 0.47 | 2% | 21% |
+| 6 | arimoclomol (S1b, folding) | 0.53 | 0.17 | 0.46 | 2% | 46% |
+| 7 | hydroxychloroquine (S4, aneuploid stress) | 0.45 | 0.45 | 0.45 | 1% | 13% |
+| 8 | anakinra (S2b, IL-1/SASP) | 0.43 | 0.43 | 0.43 | 1% | 9% |
+| 9 | sodium phenylbutyrate (S1b, folding) | 0.49 | 0.16 | 0.42 | 1% | 19% |
+| 10 | gentamicin (S1c, read-through) | 0.38 | 0.38 | 0.38 | 0% | 2% |
+| 11 | ruxolitinib (S2, mTORC1/SASP) | 0.33 | 0.33 | 0.33 | 0% | 0% |
+
+Table 3. Patient-specific ranking (`outputs/patient_ranking.csv`) and stability over 5,000 draws that perturb weights
+and expert scores and, in every draw, resample the class of the missense allele (`outputs/patient_rank_stability.csv`).
+
+Three results matter. First, niacin is the most robust single hypothesis for this child, but only because the
+N1002K allele probably makes protein; it ranks first whenever P(unstable) exceeds 0.5 (Figure 4). Second, arimoclomol
+has the widest spread: second if instability is confirmed, near the bottom if not - it is the candidate whose value an
+experiment would change most. Third, removing the phenotype modifiers changes little at the top
+(`outputs/patient_ranking_no_context.csv`); they mainly push gentamicin, already low, further down and separate the
+immunosuppressive senomorphics from metformin.
+
+![Figure 4. Expected score of the leading candidates as a function of P(N1002K protein is unstable). Niacin overtakes everolimus at P = 0.5; arimoclomol overtakes everolimus only near certainty.](FIG/patient_class_sweep.png)
+
+### 2.5 The decisive experiment and a combination rationale
+
+**One assay decides the ranking:** the half-life of BUBR1-N1002K. Cheapest version, no patient material needed:
+express wild-type, N1002K and L1012P (positive control) BUBR1 in a human cell line, measure turnover by cycloheximide
+chase, and test HSP90 dependence with an HSP90 inhibitor, as was done for L1012P [@Suijkerbuijk2010]. If N1002K behaves
+like L1012P, test niacin (or another NAD+ precursor), arimoclomol and their combination for steady-state BUBR1 and
+checkpoint competence (nocodazole arrest, mitotic-error rate). If the treating team can provide patient fibroblasts or
+lymphoblastoid cells, the same readouts on endogenous protein are definitive.
+
+**Why a combination is worth testing.** An external reviewer model objected that SIRT2-dependent deacetylation, the
+target of the NAD+ route, controls degradation of correctly folded BUBR1 [@North2014; @Suematsu2014] and cannot rescue
+a folding defect. We agree this is the main weakness of H1 for a misfolded allele. Niacin and arimoclomol act on two
+different degradation routes of the same protein - acetylation-dependent turnover and folding quality control
+(arimoclomol co-induces heat-shock proteins [@Kirkegaard2016]) - so the combination, tested in the assay above, is the
+patient-specific hypothesis with the best mechanistic coverage. Combinations of approved medicines are in scope for
+Track 2.
+
+**Nonsense allele.** The UGA stop of p.(Leu737Ter) is followed by A; aminoglycoside read-through depends on the stop
+codon and its flanking context [@Manuvakhova2000] and on transcripts escaping decay. Gentamicin therefore stays a
+cell-assay probe only, now further penalised for this child's nephrocalcinosis.
+
+### 2.6 Patient-specific do-no-harm notes
+
+These are observations for the treating oncology team to weigh, not recommendations to withhold standard care.
+
+1. **Spindle poisons in rhabdomyosarcoma regimens.** Standard regimens contain vincristine, a tubulin binder;
+   BubR1-insufficient cells slip out of mitotic arrest [@Dai2004], and an MVA1 child with rhabdomyosarcoma was managed
+   with reduced-intensity chemotherapy [@NishitaniIsa2019].
+2. **HSP90 inhibitors.** If N1002K behaves like L1012P, HSP90 inhibition would strip it of its chaperone and lower the
+   only protein-making allele [@Suijkerbuijk2010].
+3. **ATP-site kinase inhibitors that bind BUBR1.** ATP-competitive inhibitors can deprive Hsp90-dependent kinases of
+   Cdc37 and drive their degradation [@Polier2013]. ChEMBL lists no approved drug with meaningful BUBR1 affinity
+   (24 activities; best approved ceritinib, IC50 13 uM), so this is a watch item, not a current conflict.
+4. **Renal.** Nephrocalcinosis plus aminoglycosides: avoid gentamicin read-through outside cell assays
+   [@McWilliam2017]; renal ultrasound surveillance is already recommended in MVA [@Nakano2024].
+5. **Drug interactions.** Vincristine is CYP3A-metabolised and strong CYP3A inhibitors cause severe vincristine
+   neurotoxicity [@Moriyama2012]; mTOR inhibitors and dasatinib need an interaction review against the regimen.
+
+### 2.7 Multi-model ideation and critique
+
+To reduce single-model bias we sent a structured review request - containing only a generic genotype class
+(nonsense + kinase-domain missense) and our candidate list, no patient data - to six other models through free tiers;
+every call, including failures, is logged verbatim in `logs/multimodel_critique/`. Two returned reviews (Google Gemini
+3.7 Flash; NVIDIA Nemotron 3 Ultra via OpenRouter); four failed (Moonshot Kimi K2.6 and GLM 5.3 returned empty
+content, DeepSeek V4.1 Flash timed out, Mistral Magistral was rate-limited). Both reviewers independently made the same
+main objection: SIRT2-dependent deacetylation, the target of the NAD+ route, controls degradation of correctly folded
+BUBR1 [@North2014] and need not rescue a folding defect - which we accept and answer with the combination rationale in
+Section 2.5. Adopted after our own PubMed verification: IL-1 receptor blockade with anakinra as a lower-toxicity
+senomorphic (new candidate H3b) [@Laberge2015; @GoldbachMansky2006; @Sibley2012]; the vincristine interaction flag
+[@Moriyama2012]; and a new counter-argument to sodium phenylbutyrate - inhibiting HDAC6 hyperacetylates HSP90 and
+releases its clients [@Bali2005], which could work against an HSP90-dependent N1002K protein (whether phenylbutyrate
+does this at clinical exposure is unknown). Not adopted: suggestions without verifiable evidence for a BUBR1-relevant
+mechanism or with unacceptable risk in a cancer-predisposed child (a proteasome inhibitor, ursodeoxycholic acid,
+an eIF2-alpha phosphatase inhibitor, ACE inhibitors and statins as senomorphics); ataluren, which is not
+FDA-approved and duplicates the read-through probe; and the reviewers' citations, which we did not take on trust - one
+PMID given for the ataluren discovery paper pointed to an unrelated article (the correct record is PMID 17450125).
+
+### 2.8 A discovery lead the genotype suggests (not repurposing)
+
+Because BUBR1's ATP pocket serves stability rather than catalysis [@Suijkerbuijk2012], a pocket ligand would not cost
+function and might thermodynamically stabilise N1002K; but the same kind of ligand can also remove kinases from
+Hsp90-Cdc37 and promote their degradation [@Polier2013]. No approved drug binds BUBR1 well enough to test this by
+repurposing; we record it as a two-edged question for structure-based design (`config/evidence.yaml`,
+`discovery_directions`).
+
+## 3. Approach
 
 The pipeline (`run_all.py`) is fully scripted and reruns offline from a committed HTTP cache.
 
-1. **Reference verification** (`verify_refs.py`). Each of 47 references is resolved against PubMed E-utilities; title
+1. **Reference verification** (`verify_refs.py`). Each of 68 references is resolved against PubMed E-utilities; title
    word overlap and DOI must match. Any citation key used in the knowledge base but not defined, or any reference that
-   fails verification, stops the build. Result: 47/47 verified (`outputs/reference_verification.csv`).
+   fails verification, stops the build. Result: 68/68 verified (`outputs/reference_verification.csv`).
 2. **Allele-class landscape** (`clinvar_landscape.py`). All single-gene Pathogenic/Likely pathogenic ClinVar records for
    seven MVA genes are classified as truncating (frameshift/splice), nonsense, kinase-window missense (unstable),
    other missense (functional) or regulatory, using the UniProt O60566 kinase domain (766-1050) extended N-terminally to
@@ -102,12 +296,17 @@ The pipeline (`run_all.py`) is fully scripted and reruns offline from a committe
    for a dosage effect); a mismatched strategy keeps 25% of its score: `score = base * (0.25 + 0.75 * fit)`.
 7. **Robustness.** 5,000 draws with Dirichlet-perturbed weights (concentration 20) and uniform noise of +/-0.5 on every
    expert score; we report P(rank 1), P(top 3) and median rank.
-8. **Genotype instantiation** (`classify_variants.py`). Given the two confirmed alleles, the script prints their classes
-   and the matching ranked list locally; the genotype never needs to enter the repository.
+8. **Genotype instantiation** (`classify_variants.py`). Given two alleles, the script prints their classes and the
+   matching ranked list.
+9. **Patient layer** (Submission 2). `vcf_panel_extract.py` (run where the controlled VCF lives) finds rare
+   protein-altering variants in 16 checkpoint/MVA genes; `variant_effect_models.py` scores missense variants with
+   ESM-1v, ESM-2 and ThermoMPNN on the public AlphaFold model; `score.py` computes the class-mixture ranking with
+   phenotype risk modifiers, a 5,000-draw stability analysis that also resamples the missense class, and a sweep
+   over P(unstable); `patient_figures.py` draws Figures 2-4.
 
-## 3. Results
+## 4. Results
 
-### 3.1 The dosage-responsive allele class is invisible in ClinVar
+### 4.1 The dosage-responsive allele class is invisible in ClinVar
 
 Of 78 single-gene Pathogenic/Likely pathogenic *BUB1B* records, 76 are truncating (40 frameshift/splice, 36 nonsense),
 one is a missense outside the kinase window and one is unclassified (`outputs/clinvar_allele_class_summary.csv`). In
@@ -117,11 +316,11 @@ significance and 22 have conflicting classifications; one is Likely pathogenic
 determines whether a dosage-raising drug can work - is therefore usually a variant of uncertain significance in public
 databases. The kinase-window rule reproduces measured protein abundance for 7 of 8 published MVA1 missense alleles;
 the single discordant allele (Q921H, normal abundance) occurs in cis with the unstable L844F allele
-[@Suijkerbuijk2010] (`outputs/kinase_window_rule_check.csv`, Figure 2).
+[@Suijkerbuijk2010] (`outputs/kinase_window_rule_check.csv`, Figure 5).
 
-![Figure 2. BUBR1 allele map. Above: ClinVar Pathogenic/Likely pathogenic variants with a protein position. Below: published MVA1 missense alleles coloured by measured protein abundance; the shaded window marks the "in or near kinase domain" rule.](FIG/bubr1_alleles.png)
+![Figure 5. BUBR1 allele map. Above: ClinVar Pathogenic/Likely pathogenic variants with a protein position. Below: published MVA1 missense alleles coloured by measured protein abundance; the shaded window marks the "in or near kinase domain" rule.](FIG/bubr1_alleles.png)
 
-### 3.2 The ranking depends on the genotype
+### 4.2 The ranking depends on the genotype
 
 | Candidate (strategy) | trunc + unstable missense | nonsense + unstable missense | trunc + stable missense | trunc + low-expression | two unstable missense |
 |---|---|---|---|---|---|
@@ -134,25 +333,26 @@ the single discordant allele (Q921H, normal abundance) occurs in cis with the un
 | metformin (S4) | 0.47 | 0.47 | 0.47 | 0.47 | 0.47 |
 | hydroxychloroquine (S4) | 0.45 | 0.45 | 0.45 | 0.45 | 0.45 |
 | ruxolitinib (S2) | 0.35 | 0.35 | 0.35 | 0.35 | 0.24 |
+| anakinra (S2b) | 0.45 | 0.45 | 0.45 | 0.45 | 0.45 |
 | gentamicin (S1c) | 0.10 | 0.42 | 0.10 | 0.10 | 0.10 |
 
-Table 1. Allele-aware scores (`outputs/ranking_by_genotype.csv`; Figure 3). The first column is the most common MVA1
+Table 4. Allele-aware scores for generic genotype configurations (`outputs/ranking_by_genotype.csv`; Figure 6). The first column is the most common MVA1
 configuration [@Suijkerbuijk2010] and our primary scenario. Scores rank hypotheses for testing; they are not
 predictions of efficacy.
 
-![Figure 3. Allele-aware score by BUB1B genotype configuration.](FIG/ranking_heatmap.png)
+![Figure 6. Allele-aware score by BUB1B genotype configuration.](FIG/ranking_heatmap.png)
 
-### 3.3 Robustness
+### 4.3 Robustness
 
-Under 5,000 perturbations of weights and expert scores, niacin ranked first in 88.2% and in the top three in 97.7% of
-draws for the primary genotype. Arimoclomol (54.7% top three) and everolimus (52.9%) compete for second place,
-followed by dasatinib (33.7%); ruxolitinib and gentamicin never entered the top three
-(`outputs/rank_stability_G1_TRUNC_x_MSUNSTABLE.csv`, Figure 4). The top of the list is robust to reasonable
+Under 5,000 perturbations of weights and expert scores, niacin ranked first in 87.8% and in the top three in 97.4% of
+draws for the primary generic genotype. Arimoclomol (52.4% top three) and everolimus (50.5%) compete for second place,
+followed by dasatinib (33.4%); ruxolitinib and gentamicin never entered the top three
+(`outputs/rank_stability_G1_TRUNC_x_MSUNSTABLE.csv`, Figure 7). The top of the list is robust to reasonable
 disagreement about weights; places two to four are not, and we present them as a group.
 
-![Figure 4. Rank stability for the primary genotype across 5,000 perturbed rankings.](FIG/rank_stability.png)
+![Figure 7. Rank stability for the primary genotype across 5,000 perturbed rankings.](FIG/rank_stability.png)
 
-## 4. Repurposing hypotheses
+## 5. Repurposing hypotheses
 
 Evidence tier for each hypothesis: **A** - the intervention itself was tested in a BubR1/MVA model; **B** - the
 mechanism was validated (genetically or with a related agent) in a BubR1/MVA model and the drug engages that
@@ -190,7 +390,7 @@ cerebellar myelination in an NPC mouse model [@Gray2022]. Sodium phenylbutyrate,
 weaker alternative: its rescue evidence is for a secretory protein (LDLR G544V) [@Tveten2007], whereas BUBR1 is
 cytosolic, and it also inhibits histone deacetylases, which could alter BUBR1 acetylation [@Choi2009].
 
-*Genotype dependence.* Only for unstable missense alleles; near-zero fit otherwise (Table 1).
+*Genotype dependence.* Only for unstable missense alleles; near-zero fit otherwise (Table 4).
 
 *Counter-evidence and gaps.* No data on BUBR1; heat-shock proteins also support tumour cells (theoretical);
 treatment-related urticaria and angioedema were reported [@Mengel2021].
@@ -213,6 +413,15 @@ intermediate-risk rhabdomyosarcoma [@Gupta2024].
 immunosuppression could blunt NK-cell clearance of aneuploid cells [@Wang2021].
 
 *Decisive test.* p-S6K/p-4EBP1 and SASP panel in MVA fibroblasts; muscle function in BubR1 +/X753 mice.
+
+### H3b. IL-1 receptor blockade (anakinra) as a lower-toxicity senomorphic (tier C; S2b; added in Submission 2)
+
+*Rationale.* mTOR drives the SASP by promoting IL1A translation [@Laberge2015], so blocking IL-1 signalling targets the
+same output as H3 one step further downstream, without mTOR inhibition. Anakinra is used from the neonatal period in
+NOMID with sustained benefit [@GoldbachMansky2006; @Sibley2012]. Suggested in the multi-model critique round and kept
+after verification. *Counter-evidence and gaps.* No BubR1/MVA data; the SASP also recruits immune clearance of
+aneuploid senescent cells [@Wang2021]. *Decisive test.* IL-1a/IL-6/IL-8 secretion and SA-beta-gal in MVA fibroblast
+cultures with and without IL-1 receptor blockade.
 
 ### H4. Intermittent senolytic clearance (dasatinib, with quercetin) of senescent aneuploid cells (tier B; S3)
 
@@ -241,7 +450,7 @@ endpoints in BubR1 H/H mice.
 * **Ruxolitinib.** JAK inhibition suppressed the SASP and frailty in old mice [@Xu2015]; weakest link to BUBR1 and a
   high infection risk; ranked last but one.
 
-## 5. Do-no-harm layer: risks for the clinician to weigh
+## 6. Do-no-harm layer: risks for the clinician to weigh
 
 These flags are generated from mechanism and literature. They are research observations, not prescribing advice,
 and are **not** a recommendation to withhold standard-of-care oncology treatment, which remains the decision of the
@@ -270,15 +479,20 @@ treating oncology team.
 7. **Cancer predisposition.** Any agent that supports cell survival (NAD+ repletion, heat-shock proteins) must be
    weighed against tumour risk in a cancer-predisposition syndrome before any clinical use.
 
-## 6. Limitations
+## 7. Limitations
 
-* **The child's genotype was not used.** We did not download the controlled dataset. The Track 1 scoring rules imply
-  a pair of variants; our framework covers five plausible biallelic configurations and can be instantiated locally
-  (`classify_variants.py`). If both alleles are null, H1 and H2 do not apply.
+* **Genotype limits.** Phase of the two *BUB1B* variants is assumed, not shown (10.9 kb apart; no parental data).
+  The VCF contains small variants only; structural or copy-number variants and deep-intronic splice variants were not
+  assessed, and only 16 checkpoint/MVA genes were screened.
+* **The class of N1002K is predicted, not measured.** Three of four predictors and the structural context favour
+  instability, ESM-1v does not, and none is calibrated on BUBR1 turnover; the ranking is therefore reported as a
+  mixture with an explicit sweep, and the half-life assay in Section 2.5 should replace the prior.
+* **Phenotype modifiers are coarse.** We used two HPO terms only and no treatment history (not provided); the treating
+  team's current regimen determines real interactions.
 * **Expert scores are judgements.** Every score is referenced and the sensitivity analysis shows which conclusions
   survive disagreement, but the scores were assigned by one participant with AI assistance and need independent review.
 * **The kinase-window rule rests on eight measured alleles** from one study [@Suijkerbuijk2010]; a functional assay
-  (cycloheximide chase) should replace the rule for any new allele.
+  (cycloheximide chase) should replace the rule for any new allele, including N1002K.
 * **Literature bias.** The candidate list comes from mechanism-first literature review, not an unbiased screen; drugs
   acting through mechanisms outside the four strategies would be missed.
 * **No efficacy data in MVA for any candidate.** Mouse evidence (BubR1 hypomorphs, X753 and L1002P alleles) may not
@@ -286,7 +500,7 @@ treating oncology team.
 * **Database snapshot.** ClinVar, ChEMBL, openFDA and Open Targets were queried in October 2026; the HTTP cache makes
   the snapshot reproducible but not current.
 
-## 7. Scalability
+## 8. Scalability
 
 The framework separates generic machinery (reference verification, ClinVar allele-class landscape, ChEMBL/openFDA
 annotation, liability scan, scoring, sensitivity analysis) from a disease-specific YAML knowledge base. It already
@@ -295,14 +509,17 @@ MVA-associated genes (`outputs/mva_gene_associations.csv`). Adding a disease mea
 adding a patient means two command-line arguments. The pipeline runs in minutes on a laptop without a GPU and reruns
 offline.
 
-## 8. Reproducibility
+## 9. Reproducibility
 
 `python run_all.py` reproduces every table and figure (offline from the committed cache after the first run);
-`pytest` covers allele classification, citation completeness, genotype fit and deterministic ranking. Code is
+`pytest` covers allele classification, citation completeness, genotype fit, deterministic ranking, the recorded
+classes of the proband's alleles and the dependence of the patient ranking on the missense class. The patient layer
+needs the controlled VCF only for `vcf_panel_extract.py` (rerun on 17 October 2026 from the repository version: same
+four calls); `variant_effect_models.py` needs only public inputs and about 45 CPU-minutes. Code is
 MIT-licensed; submissions are released under CC BY 4.0 per the hackathon rules. Repository:
 https://github.com/ttimesai-star/mva-allele-aware-repurposing (private until the hackathon closes, then public).
 
-## 9. Methods description (Track 2 template)
+## 10. Methods description (Track 2 template)
 
 **Team name.** zbignevich1 (individual participant).
 
@@ -312,9 +529,13 @@ that chain (raise residual BUBR1; help unstable missense BUBR1 fold; dampen mTOR
 exploratory ones; (3) select approved medicines acting on each node and confirm approval status (ChEMBL max phase 4)
 and paediatric label text (openFDA); (4) score each candidate on six referenced evidence dimensions; (5) weight by
 allele fit for five genotype configurations; (6) test rank stability by Monte Carlo perturbation; (7) scan all
-approved drugs for checkpoint-dependent mechanisms to build the do-no-harm layer.
+approved drugs for checkpoint-dependent mechanisms to build the do-no-harm layer; (8) Submission 2: extract the
+proband's rare protein-altering variants in 16 checkpoint/MVA genes from the provided VCF, classify both *BUB1B*
+alleles, assess the missense allele with ESM-1v, ESM-2, AlphaMissense and ThermoMPNN on the AlphaFold model, and
+compute a patient-specific ranking that mixes over the missense class and adds HPO-driven risk modifiers;
+(9) multi-model critique round, every adopted suggestion re-verified against PubMed.
 
-**Generative AI (required).** AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription. The account's 'Help improve our AI models' (training) setting was switched OFF on 17 October 2026, before submission; no hackathon-provided (gated) data was ever downloaded or shared with any model - the analysis used only public sources (PubMed, ClinVar, ChEMBL, openFDA, Open Targets). Models were used for literature triage, code and drafting; every reference was verified programmatically against PubMed (47/47).
+**Generative AI (required).** AI use: Anthropic Claude Opus 5.5 via Claude Code on a consumer Claude Max subscription, with the 'Help improve our AI models' (training) setting switched OFF on 17 October 2026, before any hackathon data were opened, and no feedback or ratings given on any output - the configuration the organisers' 28 September 2026 guidance accepts for consumer tiers. Raw controlled files (VCF, phenotype document) were processed only by local scripts on a separate workstation; Claude received only derived summaries (the four rare protein-altering calls in a 16-gene panel with zygosity and public annotations, per-gene counts, and the HPO table). Panel exon records (102) were annotated with Ensembl VEP REST, a processing tool. A critique round used free tiers of Google Gemini 3.7 Flash and NVIDIA Nemotron 3 Ultra via OpenRouter (plus four calls that failed: Kimi K2.6, GLM 5.3, DeepSeek V4.1 Flash, Mistral Magistral) with a prompt containing no patient data. Models were used for analysis code, literature triage, critique and drafting; every reference was verified programmatically against PubMed (68/68). All controlled data were deleted from the workstation on 17 October 2026 (see Section 2.1).
 
 **Automated or manual identification.** Hybrid. Candidate selection and expert scores come from manual, AI-assisted
 literature review and curation; database annotation, reference verification, the ClinVar landscape, the liability
@@ -325,11 +546,14 @@ senescence and senolytics, mTOR and SASP, aneuploidy-selective compounds, proteo
 of each candidate. Each mechanism edge, strategy and score in `config/evidence.yaml` carries citation keys;
 counter-evidence is recorded explicitly (`counter_refs`).
 
-**Public data only?** Yes. Only public databases and literature were used.
+**Public data only?** No. Hackathon data used: the VCF (16-gene panel extraction only) and the HPO phenotype terms.
+FASTQ files were not used.
 
 **Public data sources.** PubMed/E-utilities (literature and reference verification), ClinVar (variant classes),
 UniProt O60566 (domain map), ChEMBL (approval status, mechanisms, liability scan), openFDA drug labels (paediatric use),
-Open Targets Platform (MVA-associated genes), MONDO (MONDO_0009759).
+Open Targets Platform (MVA-associated genes), MONDO (MONDO_0009759), Ensembl VEP REST with gnomAD, AlphaMissense,
+REVEL, CADD and SpliceAI; UCSC Genome Browser API (MANE transcripts); AlphaFold DB (AF-O60566-F1, v6); ESM-1v and
+ESM-2 weights (Hugging Face); ThermoMPNN code and weights (GitHub, Kuhlman lab).
 
 **Proprietary data.** None.
 
@@ -338,12 +562,13 @@ transcript, kinase-domain missense alleles give unstable protein, other missense
 attachment defects [@Suijkerbuijk2010]; pathway: spindle assembly checkpoint -> chromosome missegregation ->
 p53/p21/p16 senescence and SASP -> progeroid decline and embryonal cancer, with an allele-specific mTORC1 branch.
 
-**Time and effort.** About 20 person-hours including AI-assisted work; pipeline runtime of minutes on a laptop; no
-paid compute.
+**Time and effort.** About 30 person-hours including AI-assisted work; generic pipeline runs in minutes on a laptop;
+patient layer ~45 CPU-minutes (ESM, ThermoMPNN) on a desktop CPU; no paid compute.
 
 **Method abstract.** See *Summary*. Strengths: allele-aware rather than gene-level ranking; every claim tied to a
-verified reference; explicit counter-evidence; quantified robustness; machine-generated safety layer; public data only;
-scales by configuration. Limitations: Section 6.
+verified reference; explicit counter-evidence; quantified robustness including uncertainty about the patient's
+missense class; patient-specific safety layer; one decisive experiment named; scales by configuration.
+Limitations: Section 7.
 
 ## Acknowledgement
 

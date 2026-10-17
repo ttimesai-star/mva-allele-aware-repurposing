@@ -37,3 +37,28 @@ def test_primary_ranking_is_deterministic():
     assert a.equals(b)
     top = a[a.genotype == cfg["primary_genotype"]].sort_values("rank").drug.iloc[0]
     assert top == "niacin"
+
+
+def test_patient_alleles_classify_as_recorded():
+    pg = load_yaml("patient_genotype.yaml")
+    for a in pg["alleles"]:
+        cls, pos = classify(f"(p.{a['hgvs_p'][3:-1]})", [], WIN)
+        if cls == "TRUNC" and "Ter" in a["hgvs_p"]:
+            cls = "TRUNC_NONSENSE"
+        assert (cls, pos) == (a["class"], a["protein_position"])
+    assert [a["class"] for a in pg["alleles"]] == load_yaml("weights.yaml")["patient"]["alleles"]
+
+
+def test_patient_ranking_depends_on_missense_class():
+    from score import patient_scores
+    ev, cfg = load_yaml("evidence.yaml"), load_yaml("weights.yaml")
+    assert patient_scores(ev, cfg, p_unstable=1.0).drug.iloc[0] == "niacin"
+    assert patient_scores(ev, cfg, p_unstable=0.0).drug.iloc[0] != "niacin"
+    top_if_unstable = list(patient_scores(ev, cfg, p_unstable=1.0).drug.iloc[:2])
+    assert "arimoclomol" in top_if_unstable
+
+
+def test_context_modifiers_reference_known_drugs():
+    ev = load_yaml("evidence.yaml")
+    drugs = {c["drug"] for c in ev["candidates"]}
+    assert {m["drug"] for m in ev["patient_context_modifiers"]} <= drugs

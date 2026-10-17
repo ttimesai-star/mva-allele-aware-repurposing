@@ -17,7 +17,7 @@ MUTED = "#6b7785"
 C = {"TRUNC": "#c0392b", "TRUNC_NONSENSE": "#e67e22", "MS_UNSTABLE": "#2471a3", "MS_FUNCTIONAL": "#7fb3d5",
      "REG": "#8e44ad", "OTHER": "#95a5a6"}
 STRAT_C = {"S1_DOSAGE": "#1b7f5a", "S1b_PROTEOSTASIS": "#2e9e74", "S1c_READTHROUGH": "#7cc6a4",
-           "S2_MTOR": "#2471a3", "S3_SENOLYTIC": "#8e44ad", "S4_ANEU_SELECTIVE": "#b9770e"}
+           "S2_MTOR": "#2471a3", "S2b_IL1": "#5dade2", "S3_SENOLYTIC": "#8e44ad", "S4_ANEU_SELECTIVE": "#b9770e"}
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10, "axes.edgecolor": MUTED,
                      "axes.labelcolor": INK, "xtick.color": INK, "ytick.color": INK})
 

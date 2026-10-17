@@ -109,6 +109,17 @@ strategies:
     allele_fit: {TRUNC: 1.0, MS_UNSTABLE: 0.6, MS_FUNCTIONAL: 0.6, REG: 0.6, TRUNC_NONSENSE: 1.0}
     refs: [Sieben2020, Laberge2015, Mannick2014, Mannick2018]
     counter_refs: [Wang2021, Gupta2024]
+  S2b_IL1:
+    name: "Block IL-1 signalling of the senescence-associated secretory phenotype (senomorphic)"
+    intent: "dampen SASP-driven tissue damage without mTOR inhibition or cell killing"
+    logic: >
+      mTOR drives the SASP by promoting IL1A translation, and IL-1 signalling sustains the secretory program
+      (Laberge 2015). Anakinra, an IL-1 receptor antagonist, is used from the neonatal period in NOMID with sustained
+      benefit and a long paediatric safety record (Goldbach-Mansky 2006; Sibley 2012). Added after the multi-model
+      ideation round (Submission 2) as a lower-toxicity alternative to mTOR/JAK senomorphics.
+    allele_fit: {TRUNC: 1.0, MS_UNSTABLE: 1.0, MS_FUNCTIONAL: 1.0, REG: 1.0, TRUNC_NONSENSE: 1.0}
+    refs: [Laberge2015, GoldbachMansky2006, Sibley2012]
+    counter_refs: [Wang2021]
   S3_SENOLYTIC:
     name: "Clear senescent (often aneuploid) cells, hit-and-run"
     intent: "delay lens, fat and muscle pathology; remove arrested aneuploid cells"
@@ -235,10 +246,10 @@ candidates:
     why: >
       Licensed for urea-cycle disorders in children; acts as a chemical chaperone for misfolded mutants
       (LDLR G544V; Tveten 2007). Evidence is for secretory proteins, BUBR1 is cytosolic - weaker fit.
-    risk_note: "also an HDAC inhibitor - effect on BUBR1 acetylation and mitosis unknown; pill burden"
+    risk_note: "also an HDAC inhibitor - effect on BUBR1 acetylation and mitosis unknown; HDAC6 inhibition hyperacetylates HSP90 and releases its clients (Bali 2005), which could work against an HSP90-dependent missense BUBR1; pill burden"
     validation: "as arimoclomol"
     refs: [Tveten2007, Suijkerbuijk2010]
-    counter_refs: [Choi2009]
+    counter_refs: [Choi2009, Bali2005]
   - drug: gentamicin
     chembl: CHEMBL6067485
     strategy: S1c_READTHROUGH
@@ -248,6 +259,18 @@ candidates:
     validation: "full-length BUBR1 in nonsense-allele patient cells +/- gentamicin"
     refs: [Mosallaei2022]
     counter_refs: []
+
+  - drug: anakinra
+    chembl: CHEMBL1201570
+    strategy: S2b_IL1
+    scores: {mech: 1, model: 0.5, human: 2, ped: 3, test: 2, risk: 1}
+    why: >
+      IL-1 receptor antagonist; IL1A is the upstream regulator of the SASP downstream of mTOR (Laberge 2015).
+      Paediatric use from the neonatal period in NOMID (Goldbach-Mansky 2006; Sibley 2012). No BubR1/MVA data.
+    risk_note: "infections; injection-site reactions; SASP blockade could blunt immune clearance of aneuploid cells"
+    validation: "IL-1a/IL-6/IL-8 secretion and SA-beta-gal in MVA fibroblast cultures +/- IL-1 receptor blockade"
+    refs: [Laberge2015, GoldbachMansky2006, Sibley2012]
+    counter_refs: [Wang2021]
 
 # Not ranked (not licensed medicines) but named in the report next to the licensed alternative:
 non_licensed_mentions:
@@ -270,3 +293,31 @@ clinical_flags:
   - {flag: "Avoid radiation exposure where possible in surveillance imaging", refs: [Nakano2024]}
   - {flag: "Reports of severe chemotherapy toxicity / reduced-intensity regimens in MVA1 children", refs: [Ochiai2019, NishitaniIsa2019]}
   - {flag: "Renal ultrasound every 3 months to age 7 for all MVA (SIOP-E / AACR)", refs: [Nakano2024]}
+  - {flag: "Vincristine is CYP3A-metabolised and strong CYP3A inhibitors (azoles) cause severe vincristine neurotoxicity; any CYP3A-interacting candidate (mTOR inhibitors, dasatinib) needs a drug-interaction review against the oncology regimen", refs: [Moriyama2012]}
+
+# ---------------------------------------------------------------------------
+# Patient-context risk modifiers (Submission 2). Driven by the HPO profile supplied with the hackathon data
+# (embryonal rhabdomyosarcoma HP:0002859; nephrocalcinosis HP:0000121). Each adds to the candidate's
+# 'risk' score (capped at 3) for the patient-specific ranking only; the genotype-configuration tables are unchanged.
+# ---------------------------------------------------------------------------
+patient_context_modifiers:
+  - {drug: gentamicin, delta_risk: 1.0, hpo: "HP:0000121", why: "pre-existing renal calcification; aminoglycoside nephrotoxicity is common in children", refs: [McWilliam2017]}
+  - {drug: dasatinib, delta_risk: 0.5, hpo: "HP:0002859", why: "myelosuppression on top of rhabdomyosarcoma chemotherapy, which in MVA1 already needed dose reduction", refs: [Gore2018, NishitaniIsa2019]}
+  - {drug: everolimus, delta_risk: 0.5, hpo: "HP:0002859", why: "immunosuppression during/after cancer therapy; may blunt NK clearance of aneuploid cells; no frontline RMS benefit of mTOR inhibition", refs: [Wang2021, Gupta2024]}
+  - {drug: sirolimus, delta_risk: 0.5, hpo: "HP:0002859", why: "as everolimus", refs: [Wang2021, Gupta2024]}
+  - {drug: anakinra, delta_risk: 0.5, hpo: "HP:0002859", why: "infection risk after cancer therapy; may blunt SASP-dependent immune clearance", refs: [Wang2021]}
+  - {drug: ruxolitinib, delta_risk: 0.5, hpo: "HP:0002859", why: "immunosuppression and cytopenias during/after cancer therapy", refs: [Wang2021]}
+
+# Not ranked: drug-discovery direction suggested by the patient's missense allele (no approved ligand).
+discovery_directions:
+  - name: "ATP-site ligand for the BUBR1 pseudokinase domain - a two-edged discovery lead"
+    logic: >
+      In human BUBR1 the residues that bind ATP in conventional kinases are needed for conformational stability,
+      while catalysis is dispensable for error-free segregation (Suijkerbuijk 2012), so an ATP-site ligand would not
+      cost function and might thermodynamically stabilise a folding-defective kinase-domain mutant. The opposite is
+      equally plausible: ATP-competitive inhibitors block recruitment of client kinases to Hsp90-Cdc37 and thereby
+      promote their degradation (Polier 2013), and kinase-domain MVA mutants are Hsp90-dependent (Suijkerbuijk 2010).
+      ChEMBL lists 24 BUBR1 activities and no approved drug with meaningful affinity (best approved: ceritinib,
+      IC50 13 uM), so this is a discovery question, not a repurposing lead; the same logic adds potent BUBR1 binders
+      to the watch list of the do-no-harm layer.
+    refs: [Suijkerbuijk2012, Polier2013, Suijkerbuijk2010]

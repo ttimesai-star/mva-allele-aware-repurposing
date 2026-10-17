@@ -18,3 +18,11 @@ genotypes:
   G4_TRUNC_x_REG: [TRUNC, REG]
   G5_MSUNSTABLE_x_MSUNSTABLE: [MS_UNSTABLE, MS_UNSTABLE]
 primary_genotype: G1_TRUNC_x_MSUNSTABLE
+
+# Patient-specific instantiation (Submission 2). Allele classes come from config/patient_genotype.yaml;
+# the missense allele's class is uncertain until measured, so rankings are reported as a mixture over
+# 'unstable' (kinase-domain, fast turnover) and 'stable' (normal abundance, functional defect).
+patient:
+  alleles: [TRUNC_NONSENSE, MS_UNSTABLE]
+  alleles_if_missense_stable: [TRUNC_NONSENSE, MS_FUNCTIONAL]
+  p_missense_unstable: 0.8

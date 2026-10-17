@@ -4,7 +4,7 @@
 import subprocess
 import sys
 
-STEPS = ["verify_refs.py", "clinvar_landscape.py", "drug_annotations.py", "score.py", "make_figures.py"]
+STEPS = ["verify_refs.py", "clinvar_landscape.py", "drug_annotations.py", "score.py", "make_figures.py", "patient_figures.py"]
 if __name__ == "__main__":
     for s in STEPS:
         print(f"\n=== {s}")

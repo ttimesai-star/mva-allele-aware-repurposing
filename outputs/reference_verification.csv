@@ -46,3 +46,24 @@ Gray2022,36455410,10.1016/j.ebiom.2022.104374,EBioMedicine,2022,Gray J,Heat shoc
 Tveten2007,17408384,10.1111/j.1742-4658.2007.05735.x,FEBS J,2007,Tveten K,4-Phenylbutyrate restores the functionality of a misfolded mutant low-density lipoprotein receptor.,1.0,True,VERIFIED
 Mosallaei2022,35234826,10.1001/jamadermatol.2021.5992,JAMA Dermatol,2022,Mosallaei D,Molecular and Clinical Outcomes After Intravenous Gentamicin Treatment for Patients With Junctional Epidermolysis Bullosa Caused by Nonsense Variants.,1.0,True,VERIFIED
 Hoy2022,35986838,10.1007/s40265-022-01764-6,Drugs,2022,Hoy SM,Pimitespib: First Approval.,1.0,True,VERIFIED
+Suijkerbuijk2012,22698286,10.1016/j.devcel.2012.03.009,Dev Cell,2012,Suijkerbuijk SJ,The vertebrate mitotic checkpoint protein BUBR1 is an unusual pseudokinase.,1.0,True,VERIFIED
+Polier2013,23502424,10.1038/nchembio.1212,Nat Chem Biol,2013,Polier S,ATP-competitive inhibitors block protein kinase recruitment to the Hsp90-Cdc37 system.,1.0,True,VERIFIED
+Kirkegaard2016,27605553,10.1126/scitranslmed.aad9823,Sci Transl Med,2016,Kirkegaard T,Heat shock protein-based therapy as a potential candidate for treating the sphingolipidoses.,1.0,True,VERIFIED
+Manuvakhova2000,10917599,10.1017/s1355838200000716,RNA,2000,Manuvakhova M,Aminoglycoside antibiotics mediate context-dependent suppression of termination codons in a mammalian translation system.,1.0,True,VERIFIED
+McWilliam2017,27848094,10.1007/s00467-016-3533-z,Pediatr Nephrol,2017,McWilliam SJ,Aminoglycoside-induced nephrotoxicity in children.,1.0,True,VERIFIED
+Lindeboom2016,27618451,10.1038/ng.3664,Nat Genet,2016,Lindeboom RG,The rules and impact of nonsense-mediated mRNA decay in human cancers.,1.0,True,VERIFIED
+Cheng2023,37733863,10.1126/science.adg7492,Science,2023,Cheng J,Accurate proteome-wide missense variant effect prediction with AlphaMissense.,1.0,True,VERIFIED
+Rives2021,33876751,10.1073/pnas.2016239118,Proc Natl Acad Sci U S A,2021,Rives A,Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences.,1.0,True,VERIFIED
+Lin2023,36927031,10.1126/science.ade2574,Science,2023,Lin Z,Evolutionary-scale prediction of atomic-level protein structure with a language model.,1.0,True,VERIFIED
+Jumper2021,34265844,10.1038/s41586-021-03819-2,Nature,2021,Jumper J,Highly accurate protein structure prediction with AlphaFold.,1.0,True,VERIFIED
+Varadi2024,37933859,10.1093/nar/gkad1011,Nucleic Acids Res,2024,Varadi M,AlphaFold Protein Structure Database in 2024: providing structure coverage for over 214 million protein sequences.,1.0,True,VERIFIED
+Dieckhaus2024,38285937,10.1073/pnas.2314853121,Proc Natl Acad Sci U S A,2024,Dieckhaus H,Transfer learning to leverage larger datasets for improved prediction of protein stability changes.,1.0,True,VERIFIED
+Richards2015,25741868,10.1038/gim.2015.30,Genet Med,2015,Richards S,Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology.,1.0,True,VERIFIED
+Ioannidis2016,27666373,10.1016/j.ajhg.2016.08.016,Am J Hum Genet,2016,Ioannidis NM,REVEL: An Ensemble Method for Predicting the Pathogenicity of Rare Missense Variants.,1.0,True,VERIFIED
+McLaren2016,27268795,10.1186/s13059-016-0974-4,Genome Biol,2016,McLaren W,The Ensembl Variant Effect Predictor.,1.0,True,VERIFIED
+Jaganathan2019,30661751,10.1016/j.cell.2018.12.015,Cell,2019,Jaganathan K,Predicting Splicing from Primary Sequence with Deep Learning.,1.0,True,VERIFIED
+Rentzsch2019,30371827,10.1093/nar/gky1016,Nucleic Acids Res,2019,Rentzsch P,CADD: predicting the deleteriousness of variants throughout the human genome.,1.0,True,VERIFIED
+GoldbachMansky2006,16899778,10.1056/NEJMoa055137,N Engl J Med,2006,Goldbach-Mansky R,Neonatal-onset multisystem inflammatory disease responsive to interleukin-1beta inhibition.,1.0,True,VERIFIED
+Sibley2012,22294344,10.1002/art.34409,Arthritis Rheum,2012,Sibley CH,Sustained response and prevention of damage progression in patients with neonatal-onset multisystem inflammatory disease treated with anakinra: a cohort study to determine three- and five-year outcomes.,1.0,True,VERIFIED
+Moriyama2012,22126626,10.1111/j.1439-0507.2011.02158.x,Mycoses,2012,Moriyama B,Adverse interactions between antifungal azoles and vincristine: review and analysis of cases.,1.0,True,VERIFIED
+Bali2005,15937340,10.1074/jbc.C500186200,J Biol Chem,2005,Bali P,Inhibition of histone deacetylase 6 acetylates and disrupts the chaperone function of heat shock protein 90: a novel basis for antileukemia activity of histone deacetylase inhibitors.,1.0,True,VERIFIED

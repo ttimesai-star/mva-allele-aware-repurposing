@@ -1,0 +1,12 @@
+drug,p_rank1,p_top3,median_rank
+niacin,0.72,0.792,1.0
+everolimus,0.1,0.509,3.0
+arimoclomol,0.022,0.465,4.0
+dasatinib,0.05,0.359,5.0
+metformin,0.058,0.243,6.0
+sirolimus,0.02,0.206,6.0
+sodium phenylbutyrate,0.006,0.189,6.0
+hydroxychloroquine,0.012,0.128,7.0
+anakinra,0.01,0.086,8.0
+gentamicin,0.002,0.021,9.0
+ruxolitinib,0.0,0.002,10.0

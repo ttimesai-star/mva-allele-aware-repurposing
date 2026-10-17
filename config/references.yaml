@@ -48,3 +48,25 @@ Gray2022:         {pmid: "36455410", doi: "10.1016/j.ebiom.2022.104374", title: 
 Tveten2007:       {pmid: "17408384", doi: "10.1111/j.1742-4658.2007.05735.x", title: "4-Phenylbutyrate restores the functionality of a misfolded mutant low-density lipoprotein receptor"}
 Mosallaei2022:    {pmid: "35234826", doi: "10.1001/jamadermatol.2021.5992", title: "Molecular and Clinical Outcomes After Intravenous Gentamicin Treatment for Patients With Junctional Epidermolysis Bullosa Caused by Nonsense Variants"}
 Hoy2022:          {pmid: "35986838", doi: "10.1007/s40265-022-01764-6", title: "Pimitespib: First Approval"}
+# --- added for the patient-specific analysis (Submission 2) ---
+Suijkerbuijk2012: {pmid: "22698286", doi: "10.1016/j.devcel.2012.03.009", title: "The vertebrate mitotic checkpoint protein BUBR1 is an unusual pseudokinase"}
+Polier2013:       {pmid: "23502424", doi: "10.1038/nchembio.1212", title: "ATP-competitive inhibitors block protein kinase recruitment to the Hsp90-Cdc37 system"}
+Kirkegaard2016:   {pmid: "27605553", doi: "10.1126/scitranslmed.aad9823", title: "Heat shock protein-based therapy as a potential candidate for treating the sphingolipidoses"}
+Manuvakhova2000:  {pmid: "10917599", doi: "10.1017/s1355838200000716", title: "Aminoglycoside antibiotics mediate context-dependent suppression of termination codons in a mammalian translation system"}
+McWilliam2017:    {pmid: "27848094", doi: "10.1007/s00467-016-3533-z", title: "Aminoglycoside-induced nephrotoxicity in children"}
+Lindeboom2016:    {pmid: "27618451", doi: "10.1038/ng.3664", title: "The rules and impact of nonsense-mediated mRNA decay in human cancers"}
+Cheng2023:        {pmid: "37733863", doi: "10.1126/science.adg7492", title: "Accurate proteome-wide missense variant effect prediction with AlphaMissense"}
+Rives2021:        {pmid: "33876751", doi: "10.1073/pnas.2016239118", title: "Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences"}
+Lin2023:          {pmid: "36927031", doi: "10.1126/science.ade2574", title: "Evolutionary-scale prediction of atomic-level protein structure with a language model"}
+Jumper2021:       {pmid: "34265844", doi: "10.1038/s41586-021-03819-2", title: "Highly accurate protein structure prediction with AlphaFold"}
+Varadi2024:       {pmid: "37933859", doi: "10.1093/nar/gkad1011", title: "AlphaFold Protein Structure Database in 2024: providing structure coverage for over 214 million protein sequences"}
+Dieckhaus2024:    {pmid: "38285937", doi: "10.1073/pnas.2314853121", title: "Transfer learning to leverage larger datasets for improved prediction of protein stability changes"}
+Richards2015:     {pmid: "25741868", doi: "10.1038/gim.2015.30", title: "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology"}
+Ioannidis2016:    {pmid: "27666373", doi: "10.1016/j.ajhg.2016.08.016", title: "REVEL: An Ensemble Method for Predicting the Pathogenicity of Rare Missense Variants"}
+McLaren2016:      {pmid: "27268795", doi: "10.1186/s13059-016-0974-4", title: "The Ensembl Variant Effect Predictor"}
+Jaganathan2019:   {pmid: "30661751", doi: "10.1016/j.cell.2018.12.015", title: "Predicting Splicing from Primary Sequence with Deep Learning"}
+Rentzsch2019:     {pmid: "30371827", doi: "10.1093/nar/gky1016", title: "CADD: predicting the deleteriousness of variants throughout the human genome"}
+GoldbachMansky2006: {pmid: "16899778", doi: "10.1056/NEJMoa055137", title: "Neonatal-onset multisystem inflammatory disease responsive to interleukin-1beta inhibition"}
+Sibley2012:       {pmid: "22294344", doi: "10.1002/art.34409", title: "Sustained response and prevention of damage progression in patients with neonatal-onset multisystem inflammatory disease"}
+Moriyama2012:     {pmid: "22126626", doi: "10.1111/j.1439-0507.2011.02158.x", title: "Adverse interactions between antifungal azoles and vincristine: review and analysis of cases"}
+Bali2005:         {pmid: "15937340", doi: "10.1074/jbc.C500186200", title: "Inhibition of histone deacetylase 6 acetylates and disrupts the chaperone function of heat shock protein 90"}

@@ -1,0 +1,51 @@
+# Derived findings for the hackathon proband (Submission 2).
+# Only the two named causal-candidate variants and their annotations are recorded here - a "handful of named
+# variants" that the organisers' data-use guidance treats as findings, not data. No genotype-scale table, read data,
+# coordinates of other variants or phenotype details beyond the HPO terms relevant to drug safety are stored.
+# Produced by src/vcf_panel_extract.py run on a separate machine that held the controlled VCF; the VCF and all
+# intermediate files were deleted after the analysis (see report, data-handling statement).
+reference: "GRCh38; transcript NM_001211.6 / ENST00000287598 (MANE Select); protein UniProt O60566 (1050 aa)"
+zygosity_and_phase: >
+  Both variants heterozygous (GT 0/1, PASS, GQ 99). They are ~10.9 kb apart, so short-read phasing is impossible and
+  the VCF carries no phase set for them; no parental data are available and the organisers declined to disclose phase
+  during the challenge. Trans configuration (compound heterozygosity) is assumed, consistent with the recessive MVA1
+  phenotype.
+alleles:
+  - hgvs_c: "c.2210T>G"
+    hgvs_p: "p.(Leu737Ter)"
+    class: TRUNC_NONSENSE
+    class_label: "nonsense (UGA), NMD-predicted"
+    protein_position: 737
+    exon: "17 of 23"
+    evidence:
+      - "ClinVar VCV000533901: Pathogenic/Likely pathogenic, multiple submitters, no conflicts (MVA1)"
+      - "gnomAD max population AF 7.9e-5 (VEP); CADD 36"
+      - "premature stop in exon 17 of 23, far upstream of the last exon junction -> nonsense-mediated decay expected (Lindeboom 2016)"
+      - "stop context UGA followed by A (reference sequence); read-through susceptibility depends on this context (Manuvakhova 2000)"
+      - "even without NMD the product would lack the whole pseudokinase domain (residues 766-1050)"
+    refs: [Lindeboom2016, Manuvakhova2000, Richards2015]
+  - hgvs_c: "c.3006T>G"
+    hgvs_p: "p.(Asn1002Lys)"
+    class: MS_UNSTABLE
+    class_label: "kinase-domain missense, predicted unstable"
+    protein_position: 1002
+    exon: "23 of 23 (last)"
+    evidence:
+      - "absent from gnomAD (VEP); the same amino-acid change via c.3006T>A is a ClinVar VUS (single submitter); this nucleotide change is not in ClinVar"
+      - "inside the pseudokinase domain (766-1050), 10 residues from L1012P, an HSP90-dependent, proteasome-degraded MVA1 allele (Suijkerbuijk 2010) modelled in mice as BubR1 L1002P (Sieben 2020)"
+      - "AlphaMissense 0.923 (likely pathogenic); REVEL 0.472; CADD 24.5"
+    refs: [Suijkerbuijk2010, Sieben2020, Cheng2023, Ioannidis2016, Rentzsch2019]
+p_missense_unstable_rationale: >
+  Prior P(unstable) = 0.8 = (7 + 1) / (8 + 2): the kinase-window rule reproduced measured abundance for 7 of 8
+  published MVA1 missense alleles (Laplace rule of succession). Sequence and structure models (ESM-1v, ESM-2,
+  ThermoMPNN on the AlphaFold model) are reported alongside but not used to move the prior, because none of them
+  was calibrated on BUBR1 turnover.
+other_panel_genes: >
+  No other rare (gnomAD AF < 1%) variant with predicted damaging effect (AlphaMissense likely pathogenic, HIGH impact
+  or SpliceAI > 0.2) in 15 further spindle-checkpoint / MVA genes; the only other rare protein-altering calls were
+  two heterozygous missense variants scored likely benign by AlphaMissense (not named here; monoallelic, not
+  considered contributory). Genes screened (CEP57, TRIP13, CENATAC, BUB1, BUB3, MAD1L1, MAD2L1,
+  TTK, CDC20, KNL1, ZWINT, CENPE, SGO1, KIF2C, ANAPC1). No genome-wide or secondary-findings search was done.
+hpo_context:
+  - {hpo: "HP:0002859", term: "Rhabdomyosarcoma", use: "drug-safety context (chemotherapy interactions, myelo- and immunosuppression)"}
+  - {hpo: "HP:0000121", term: "Nephrocalcinosis", use: "drug-safety context (nephrotoxic candidates)"}

@@ -1,0 +1,12 @@
+drug,strategy,risk_used,score_if_unstable,score_if_stable,score,rank
+niacin,S1_DOSAGE,0.5,0.667,0.367,0.607,1
+everolimus,S2_MTOR,1.5,0.533,0.533,0.533,2
+dasatinib,S3_SENOLYTIC,1.0,0.5,0.5,0.5,3
+sirolimus,S2_MTOR,1.5,0.483,0.483,0.483,4
+metformin,S4_ANEU_SELECTIVE,0.5,0.475,0.475,0.475,5
+arimoclomol,S1b_PROTEOSTASIS,1.0,0.533,0.173,0.461,6
+hydroxychloroquine,S4_ANEU_SELECTIVE,1.0,0.45,0.45,0.45,7
+anakinra,S2b_IL1,1.0,0.45,0.45,0.45,7
+sodium phenylbutyrate,S1b_PROTEOSTASIS,1.0,0.492,0.16,0.425,9
+gentamicin,S1c_READTHROUGH,1.5,0.417,0.417,0.417,10
+ruxolitinib,S2_MTOR,2.0,0.35,0.35,0.35,11
